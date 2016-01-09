@@ -12,7 +12,8 @@ Na het klikken op een item in de lijst worden de details van de geselecteerde ga
 - aanwezigheid op sociale media
 - voorzieningen
 - prijs
-- ...  
+- ...
+
 (eventuele uitbreiding: Als er foto's beschikbaar zijn zal er een knop voorzien worden om ze weer te geven.)
 
 Een gebruiker kan een bepaalde gastenkamer voorzien van een rating.  
