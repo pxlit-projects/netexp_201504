@@ -1,6 +1,6 @@
 #Gastenkamers in vlaanderen
 
-Op basis van de GPS-locatie wordt een lijst weergegeven van de beschikbare gastenkamers in vlaanderen gesorteerd volgens afstand.  
+Op basis van de GPS-locatie wordt een lijst weergegeven van de beschikbare gastenkamers in vlaanderen, gesorteerd volgens afstand.  
 Bij afwezigheid van een GPS-locatie wordt de lijst gesorteerd volgens rating.  
 (eventuele uitbreiding: zoeken op locatie)
 
