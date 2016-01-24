@@ -50,11 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KamersContext.cs" />
+    <Compile Include="Migrations\201601230135440_initial.cs" />
+    <Compile Include="Migrations\201601230135440_initial.Designer.cs">
+      <DependentUpon>201601230135440_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +65,11 @@
       <Project>{98bf88bc-b418-444f-aca5-589c820ca36f}</Project>
       <Name>KamersDomain.Classes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601230135440_initial.resx">
+      <DependentUpon>201601230135440_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
