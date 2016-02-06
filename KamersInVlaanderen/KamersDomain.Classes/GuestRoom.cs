@@ -1,4 +1,7 @@
-﻿namespace KamersInVlaanderen
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace KamersInVlaanderen
 {
     public class GuestRoom
     {
@@ -10,6 +13,7 @@
         public int deleted { get; set; }
         public string name { get; set; }
         public Address address { get; set; }
+        [ForeignKey("Address")]
         public int addressId { get; set; }
         public Location location { get; set; }
         public int locationId { get; set; }
