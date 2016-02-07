@@ -1,0 +1,31 @@
+﻿<Window x:Class="Oef5_Golfsnelheid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oef5_Golfsnelheid"
+        mc:Ignorable="d"
+        Title="Bereken de golfsnelheid" Height="350" Width="525">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Name:</TextBlock>
+                <TextBox Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Length:</TextBlock>
+                <TextBox x:Name="lengthInput" Width="70"/>
+                <TextBlock>voet</TextBlock>
+            </StackPanel>
+            <Button Content="Bereken de Rompsnelheid" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Rompsnelheid:</TextBlock>
+                <TextBlock x:Name="output" Width="150"/>
+                <TextBlock>knopen</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <Viewbox>
+            
+        </Viewbox>
+    </StackPanel>
+</Window>

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef3_Grid", "Oef3_Grid\Oef3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef4", "Oef4\Oef4.csproj", "{45084645-7FC2-4008-A02A-A49354E210CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef5_Golfsnelheid", "Oef5_Golfsnelheid\Oef5_Golfsnelheid.csproj", "{BE7B2A92-DE78-4939-8192-DC6893640B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{3942690A-CB30-40EB-9CD4-70EB3D808C07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{45084645-7FC2-4008-A02A-A49354E210CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45084645-7FC2-4008-A02A-A49354E210CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45084645-7FC2-4008-A02A-A49354E210CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7B2A92-DE78-4939-8192-DC6893640B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7B2A92-DE78-4939-8192-DC6893640B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7B2A92-DE78-4939-8192-DC6893640B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7B2A92-DE78-4939-8192-DC6893640B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

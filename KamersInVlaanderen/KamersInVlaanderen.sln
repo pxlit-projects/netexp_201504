@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamersDomain.Classes", "Kam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamersWPF", "KamersWPF\KamersWPF.csproj", "{E432E199-A489-437B-86D8-AA3AB8BFFA29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamersAPI", "KamersAPI\KamersAPI.csproj", "{C273F6A0-4E0D-48D0-9CBB-98051FC9789C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestRoomsInFlandersMVCAPI", "GuestRoomsInFlandersMVCAPI\GuestRoomsInFlandersMVCAPI.csproj", "{30E9E03C-9FC8-452F-A213-1A630FD83EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamersAPI.Tests", "KamersAPI.Tests\KamersAPI.Tests.csproj", "{AA99B9E3-794C-41E2-816E-8E2DD2BC347C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestRoomsInFlandersMVCAPI.Tests", "GuestRoomsInFlandersMVCAPI.Tests\GuestRoomsInFlandersMVCAPI.Tests.csproj", "{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{E432E199-A489-437B-86D8-AA3AB8BFFA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E432E199-A489-437B-86D8-AA3AB8BFFA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E432E199-A489-437B-86D8-AA3AB8BFFA29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C273F6A0-4E0D-48D0-9CBB-98051FC9789C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C273F6A0-4E0D-48D0-9CBB-98051FC9789C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C273F6A0-4E0D-48D0-9CBB-98051FC9789C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C273F6A0-4E0D-48D0-9CBB-98051FC9789C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA99B9E3-794C-41E2-816E-8E2DD2BC347C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA99B9E3-794C-41E2-816E-8E2DD2BC347C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA99B9E3-794C-41E2-816E-8E2DD2BC347C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA99B9E3-794C-41E2-816E-8E2DD2BC347C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E9E03C-9FC8-452F-A213-1A630FD83EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E9E03C-9FC8-452F-A213-1A630FD83EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E9E03C-9FC8-452F-A213-1A630FD83EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E9E03C-9FC8-452F-A213-1A630FD83EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

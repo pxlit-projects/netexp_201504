@@ -13,7 +13,6 @@ namespace KamersInVlaanderen
         public int deleted { get; set; }
         public string name { get; set; }
         public Address address { get; set; }
-        [ForeignKey("Address")]
         public int addressId { get; set; }
         public Location location { get; set; }
         public int locationId { get; set; }
