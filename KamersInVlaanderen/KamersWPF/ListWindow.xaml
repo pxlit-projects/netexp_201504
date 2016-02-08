@@ -1,0 +1,22 @@
+﻿<Window x:Class="KamersWPF.ListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KamersWPF"
+        mc:Ignorable="d"
+        Title="ListWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <ListBox x:Name="listBox" Height="217" Width="83" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom name" />
+                <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom street" />
+                <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom city" />
+                <Button x:Name="buttonDetail" Content="Show Details" HorizontalAlignment="Center" Margin="5" Padding="5" Click="buttonDetail_Click" />
+            </StackPanel>
+        </StackPanel>
+        
+
+    </Grid>
+</Window>

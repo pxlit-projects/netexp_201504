@@ -9,15 +9,15 @@
     <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <TextBlock>Name:</TextBlock>
-                <TextBox Width="250"/>
+                <TextBlock Margin="3">Name:</TextBlock>
+                <TextBox Width="250" Margin="3"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock>Length:</TextBlock>
-                <TextBox x:Name="lengthInput" Width="70"/>
-                <TextBlock>voet</TextBlock>
+                <TextBlock Margin="3">Length:</TextBlock>
+                <TextBox x:Name="lengthInput" Width="70" Margin="3"/>
+                <TextBlock Margin="3">voet</TextBlock>
             </StackPanel>
-            <Button Content="Bereken de Rompsnelheid" HorizontalAlignment="Center" />
+            <Button Content="Bereken de Rompsnelheid" HorizontalAlignment="Center" Click="Button_Click" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Rompsnelheid:</TextBlock>
                 <TextBlock x:Name="output" Width="150"/>
@@ -25,7 +25,7 @@
             </StackPanel>
         </StackPanel>
         <Viewbox>
-            
+            <Image Source="sailboat.jpg"/>
         </Viewbox>
     </StackPanel>
 </Window>

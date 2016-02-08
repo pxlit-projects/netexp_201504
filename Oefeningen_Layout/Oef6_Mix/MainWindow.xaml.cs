@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Oef5_Golfsnelheid
+namespace Oef6_Mix
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,13 +23,6 @@ namespace Oef5_Golfsnelheid
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            double input = Convert.ToDouble(lengthInput.Text);
-            double golfsnelheid = Math.Sqrt(input) * 1.34;
-            output.Text = golfsnelheid.ToString();
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef1_ResponsiveUI", "Oef1_ResponsiveUI\Oef1_ResponsiveUI.csproj", "{2DD94D9C-318E-4CDD-A41B-0F5AB8ED90C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef2_ResponsiveUI2", "Oef2_ResponsiveUI2\Oef2_ResponsiveUI2.csproj", "{3F5392CF-395B-4D6C-8989-E07594814E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef3_async_await", "Oef3_async_await\Oef3_async_await.csproj", "{22BA4C5D-E380-4171-9051-D9CBAB5F1FEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DD94D9C-318E-4CDD-A41B-0F5AB8ED90C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD94D9C-318E-4CDD-A41B-0F5AB8ED90C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD94D9C-318E-4CDD-A41B-0F5AB8ED90C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD94D9C-318E-4CDD-A41B-0F5AB8ED90C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5392CF-395B-4D6C-8989-E07594814E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5392CF-395B-4D6C-8989-E07594814E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5392CF-395B-4D6C-8989-E07594814E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5392CF-395B-4D6C-8989-E07594814E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BA4C5D-E380-4171-9051-D9CBAB5F1FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BA4C5D-E380-4171-9051-D9CBAB5F1FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BA4C5D-E380-4171-9051-D9CBAB5F1FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BA4C5D-E380-4171-9051-D9CBAB5F1FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

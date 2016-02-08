@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef5_Golfsnelheid", "Oef5_G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{3942690A-CB30-40EB-9CD4-70EB3D808C07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oef6_Mix", "Oef6_Mix\Oef6_Mix.csproj", "{811F9713-968B-4E47-8AB4-67CC278C729F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3942690A-CB30-40EB-9CD4-70EB3D808C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811F9713-968B-4E47-8AB4-67CC278C729F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811F9713-968B-4E47-8AB4-67CC278C729F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811F9713-968B-4E47-8AB4-67CC278C729F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811F9713-968B-4E47-8AB4-67CC278C729F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

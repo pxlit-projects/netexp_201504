@@ -24,5 +24,12 @@ namespace KamersWPF
         {
             InitializeComponent();
         }
+
+        private void buttonStart_Click(object sender, RoutedEventArgs e)
+        {
+            ListWindow listWindow = new ListWindow();
+            listWindow.Show();
+            this.Close();
+        }
     }
 }
