@@ -1,0 +1,18 @@
+﻿<Window x:Class="GuestRoomWPF.GRStartView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuestRoomWPF"
+        mc:Ignorable="d"
+        Title="Guestrooms In Flanders" Height="350" Width="525">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock x:Name="textBlockTitle" HorizontalAlignment="Center" Margin="20" TextWrapping="Wrap" Text="Guestrooms in Flanders" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Choose a nickname:" />
+            <TextBox x:Name="textBoxUsername" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Width="77" Text="Anonymous"/>
+            <Button x:Name="buttonStart" Content="Enter" HorizontalAlignment="Center" Margin="5" Padding="5" Click="buttonStart_Click" />
+        </StackPanel>
+        
+    </Grid>
+</Window>
