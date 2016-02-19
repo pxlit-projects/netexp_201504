@@ -61,8 +61,13 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GRConnectedRepository.cs" />
     <Compile Include="Services\GRDataService.cs" />
+    <Compile Include="Services\GRDisconnectedRepository.cs" />
+    <Compile Include="Services\IGRConnectedRepository.cs" />
     <Compile Include="Services\IGRDataService.cs" />
+    <Compile Include="Services\IGRDisconnectedRepository.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KamersDomain.Classes\KamersDomain.Classes.csproj">

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 namespace KamersInVlaanderenDomain.DataModel.Services
 {
-    public interface IGRDataService
+    public interface IGRDisconnectedRepository
     {
-        List<GuestRoomJSON> getAllGuestRooms();
+        List<GuestRoom> getGuestRooms();
+        GuestRoom getGuestRoom(int id);
     }
 }

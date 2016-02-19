@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestRoomsInFlandersMVCAPI"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestRoomsInFlandersMVCAPI.Tests", "GuestRoomsInFlandersMVCAPI.Tests\GuestRoomsInFlandersMVCAPI.Tests.csproj", "{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestRoomWPF", "GuestRoomWPF\GuestRoomWPF.csproj", "{F3E5CA5A-0E1A-4155-AA21-0A4664016621}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75C7BA97-26B9-4C94-8C0B-45A99AF76EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E5CA5A-0E1A-4155-AA21-0A4664016621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E5CA5A-0E1A-4155-AA21-0A4664016621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E5CA5A-0E1A-4155-AA21-0A4664016621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E5CA5A-0E1A-4155-AA21-0A4664016621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

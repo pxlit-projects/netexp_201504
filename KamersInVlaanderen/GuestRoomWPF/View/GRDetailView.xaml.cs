@@ -20,7 +20,7 @@ namespace KamersWPF
     /// </summary>
     public partial class DetailsWindow : Window
     {
-        public GuestRoom SelectedGuestRoom;
+        public GuestRoom selectedGuestRoom;
 
         public DetailsWindow()
         {
@@ -31,7 +31,7 @@ namespace KamersWPF
         void GuestRoomDetailView_Loaded(object sender, RoutedEventArgs e)
         {
             //LoadData();
-            this.DataContext = SelectedGuestRoom;
+            this.DataContext = selectedGuestRoom;
         }
 
         //private void LoadData()
