@@ -1,13 +1,15 @@
-﻿namespace KamersInVlaanderen
+﻿using Newtonsoft.Json;
+
+namespace KamersInVlaanderen
 {
     public class Address
     {
-        public int id { get; set; }
-        public string street { get; set; }
-        public string houseNumber { get; set; }
-        public string boxNumber { get; set; }
-        public string postalCode { get; set; }
-        public string cityName { get; set; }
-        public string mainCityName { get; set; }
+        public int Id { get; set; }
+        public string Street { get; set; }
+        public string HouseNumber { get; set; }
+        public string BoxNumber { get; set; }
+        public string PostalCode { get; set; }
+        public string CityName { get; set; }
+        public string MainCityName { get; set; }
     }
 }
