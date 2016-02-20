@@ -10,10 +10,11 @@ namespace GuestRoomWPF.Services
 {
     public class GRDataService: IGRDataService
     {
-        IGRDisconnectedRepository repo = new GRDisconnectedRepository();
+        IGRDisconnectedRepository repo;
 
-        public GRDataService()
+        public GRDataService(IGRDisconnectedRepository repo)
         {
+            this.repo = repo;
         }
 
         public List<GuestRoom> getAllGuestRooms()

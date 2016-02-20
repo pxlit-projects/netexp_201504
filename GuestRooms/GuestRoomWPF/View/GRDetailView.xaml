@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuestRoomWPF"
         mc:Ignorable="d"
-        Title="DetailsWindow" Height="300" Width="300"
+        Title="Guestrooms In Flanders" Height="300" Width="300"
+        WindowStartupLocation="CenterScreen"
         DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRDetailViewModel}"
         >
     <Grid>

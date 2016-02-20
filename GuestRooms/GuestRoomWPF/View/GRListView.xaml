@@ -5,50 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuestRoomWPF"
         mc:Ignorable="d"
-        Title="ListWindow" Height="700" Width="500"
+        Title="Guestrooms In Flanders" 
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRListViewModel}">
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <ListView Name="GuestRoomListView" Height="550" Width="300" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                      ItemsSource="{Binding GuestRooms}" SelectedItem="{Binding SelectedGuestRoom}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="#CCCCCC" BorderThickness="1">
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="3*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="15"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding ImageId}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
-                                <Label Content="{Binding Name}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
-                                <StackPanel  Grid.Row="1" Orientation="Horizontal" Grid.Column="1">
-                                    <Label Content="test: "></Label>
-                                    <Label Content="{Binding Phone}"></Label>
-                                </StackPanel>
-                                <Label Content="{Binding Website}" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="2" ></Label>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView Name="GuestRoomListView" Height="Auto" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                    Grid.Column="0" ItemsSource="{Binding GuestRooms}" SelectedItem="{Binding SelectedGuestRoom}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#CCCCCC" BorderThickness="1">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding ImageId}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
+                                
+                            <Label Content="{Binding Name}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
+                            <StackPanel  Grid.Row="1" Orientation="Horizontal" Grid.Column="1">
+                                <Label Content="test: "></Label>
+                                <Label Content="{Binding Phone}"></Label>
+                            </StackPanel>
+                            <Label Content="{Binding Website}" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="2" ></Label>
 
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
 
-                </ListView.ItemTemplate>
+            </ListView.ItemTemplate>
 
 
-            </ListView>
-            <StackPanel Orientation="Vertical">
-                <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Name, Mode=OneWay}" />
-                <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom street" />
-                <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom city" />
-                <Button x:Name="buttonDetail" Content="Show Details" Command="{Binding DetailCommand}" HorizontalAlignment="Center" Margin="5" Padding="5" />
-            </StackPanel>
+        </ListView>
+        <StackPanel Grid.Column="1"  Orientation="Vertical" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Name, Mode=OneWay}" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>
+            <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.ProductDescription, Mode=OneWay}" />
+            <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Address.CityName, Mode=OneWay}" />
+
+            <Image Source="{Binding SelectedGuestRoom.Id, Converter={StaticResource localImageConverter}}"
+                   MaxHeight="100" VerticalAlignment="Center"></Image>
+            <Button x:Name="buttonDetail" Content="Show Details" Command="{Binding DetailCommand}" HorizontalAlignment="Center" Margin="5" Padding="5" />
         </StackPanel>
-        
-
     </Grid>
 </Window>

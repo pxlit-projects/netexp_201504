@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\ImageConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\GRDataService.cs" />

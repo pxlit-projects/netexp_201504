@@ -1,30 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 
 namespace KamersInVlaanderen
 {
-    public class GuestRoom 
+    public class GuestRoomJSON
     {
-        public GuestRoom()
-        {
-            ImageURLs = new List<ImageURL>();
-        }
-
+        [JsonIgnore]
         public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "business_product_group_id")]
         public int BusinessProductGroupId { get; set; }
+        [JsonProperty(PropertyName = "business_product_id")]
         public int BusinessProductId { get; set; }
+        
         //public string discriminator { get; set; }
         //public System.DateTime changedTime { get; set; }
         //public int deleted { get; set; }
-        
+
         //[JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
-        
-        public Address Address { get; set; }
-        public int AddressId { get; set; }
-        
-        public Location Location { get; set; }
-        public int LocationId { get; set; }
-        
+
+        //public Address Address { get; set; }
+        //public int AddressId { get; set; }
+        public string Street { get; set; }
+        [JsonProperty(PropertyName = "house_number")]
+        public string HouseNumber { get; set; }
+        [JsonProperty(PropertyName = "box_number")]
+        public string BoxNumber { get; set; }
+        [JsonProperty(PropertyName = "postal_code")]
+        public string PostalCode { get; set; }
+        [JsonProperty(PropertyName = "city_name")]
+        public string CityName { get; set; }
+        [JsonProperty(PropertyName = "main_city_name")]
+        public string MainCityName { get; set; }
+
+        //public Location location { get; set; }
+        //public int locationId { get; set; }
+        public string X { get; set; }
+        public string Y { get; set; }
+
         //public double distance { get; set; }
         //public string promotionalRegion { get; set; }
         //public string cyclingLabel { get; set; }
@@ -32,18 +45,17 @@ namespace KamersInVlaanderen
         //public string accessibilityLabel { get; set; }
         //public string closingPeriod { get; set; }
         //public string nextYearClosingPeriod { get; set; }
-        
+
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
-
-        
         //NO DATA public string Facebook { get; set; }
         //NO DATA public string Twitter { get; set; }
         //NO DATA public string Flickr { get; set; }
         //NO DATA public string Instagram { get; set; }
 
+        [JsonProperty(PropertyName = "product_description")]
         public string ProductDescription { get; set; }
 
         //public string locationType { get; set; }
@@ -73,10 +85,8 @@ namespace KamersInVlaanderen
         //public int discountChildren { get; set; }
         //public string directBookingLink { get; set; }
 
-        //virtual gives error at azure ap
-        //public virtual ICollection<ImageURL> ImageURLs { get; set; }
-        public ICollection<ImageURL> ImageURLs { get; set; }
-        //public int ImageURLsId { get; set; }
+        [JsonProperty(PropertyName = "imagesurl")]
+        public string ImageURLsString { get; set; }
 
 
     }

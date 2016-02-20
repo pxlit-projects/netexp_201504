@@ -6,6 +6,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Diagnostics;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<KamersInVlaanderenDomain.DataModel.KamersContext>
@@ -23,8 +24,8 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
             );*/
 
             // use second instance of visual studio to debug seed method
-            if (!System.Diagnostics.Debugger.IsAttached)
-                System.Diagnostics.Debugger.Launch();
+            /*if (!System.Diagnostics.Debugger.IsAttached)
+                System.Diagnostics.Debugger.Launch();*/
 
             GRJSONDataService dataService = new GRJSONDataService();
 
@@ -52,22 +53,46 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 guestRoom.Address = address;
 
                 Location location = new Location();
-
                 if (guestRoomJSON.X != "" || guestRoomJSON.Y != "")
                 {
                     location.X = Convert.ToDouble(guestRoomJSON.X);
                     location.Y = Convert.ToDouble(guestRoomJSON.Y);
                 }
-                else {
+                else
+                {
                     location.X = 0.0;
-                    location.X = 0.0;
+                    location.Y = 0.0;
                 }
-
                 guestRoom.Location = location;
+
+                guestRoom.ProductDescription = guestRoomJSON.ProductDescription;
+
+                List<ImageURL> imageUrls = new List<ImageURL>();
+                if (guestRoomJSON.ImageURLsString != "")
+                {
+                    string s = guestRoomJSON.ImageURLsString;
+                    string sub = s.Substring(0, s.Length - 1);
+                    var urlsStrings = sub.Split(',').ToList<string>();
+                    foreach (string str in urlsStrings)
+                    {
+                        ImageURL imageURL = new ImageURL();
+                        imageURL.URL = str;
+                        imageUrls.Add(imageURL);
+                    }
+                }
+                //guestRoom.ImageURLs = imageUrls;
+
 
                 context.GuestRooms.AddOrUpdate(
                          g => g.BusinessProductGroupId, guestRoom);
+
+                imageUrls.ForEach(i => context.ImageURLs.Add(i));
+                context.SaveChanges();
+                imageUrls.ForEach(i => guestRoom.ImageURLs.Add(i));
+                context.SaveChanges();
+
             }
         }
     }
 }
+

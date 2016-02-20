@@ -52,10 +52,10 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRListViewModel()
+        public GRListViewModel(IGRDataService gRDataService, IDialogService dialogService)
         {
-            this.gRDataService = new GRDataService();
-            this.dialogService = new DialogService();
+            this.gRDataService = gRDataService;
+            this.dialogService = dialogService;
             LoadData();
             LoadCommands();
         }

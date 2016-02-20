@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace KamersInVlaanderen
+﻿namespace KamersInVlaanderen
 {
     public class Address
     {

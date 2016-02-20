@@ -35,12 +35,25 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                         Mobile = c.String(),
                         Email = c.String(),
                         Website = c.String(),
+                        ProductDescription = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Addresses", t => t.AddressId, cascadeDelete: true)
                 .ForeignKey("dbo.Locations", t => t.LocationId, cascadeDelete: true)
                 .Index(t => t.AddressId)
                 .Index(t => t.LocationId);
+            
+            CreateTable(
+                "dbo.ImageURLs",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        URL = c.String(),
+                        GuestRoomId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GuestRooms", t => t.GuestRoomId, cascadeDelete: true)
+                .Index(t => t.GuestRoomId);
             
             CreateTable(
                 "dbo.Locations",
@@ -57,10 +70,13 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.GuestRooms", "LocationId", "dbo.Locations");
+            DropForeignKey("dbo.ImageURLs", "GuestRoomId", "dbo.GuestRooms");
             DropForeignKey("dbo.GuestRooms", "AddressId", "dbo.Addresses");
+            DropIndex("dbo.ImageURLs", new[] { "GuestRoomId" });
             DropIndex("dbo.GuestRooms", new[] { "LocationId" });
             DropIndex("dbo.GuestRooms", new[] { "AddressId" });
             DropTable("dbo.Locations");
+            DropTable("dbo.ImageURLs");
             DropTable("dbo.GuestRooms");
             DropTable("dbo.Addresses");
         }
