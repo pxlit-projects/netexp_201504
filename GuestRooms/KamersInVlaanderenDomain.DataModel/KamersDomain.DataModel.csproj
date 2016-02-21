@@ -56,9 +56,9 @@
   <ItemGroup>
     <Compile Include="GuestRoomJSON.cs" />
     <Compile Include="KamersContext.cs" />
-    <Compile Include="Migrations\201602201750284_Initial.cs" />
-    <Compile Include="Migrations\201602201750284_Initial.Designer.cs">
-      <DependentUpon>201602201750284_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201602202225018_Initial.cs" />
+    <Compile Include="Migrations\201602202225018_Initial.Designer.cs">
+      <DependentUpon>201602202225018_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,11 +77,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602201750284_Initial.resx">
-      <DependentUpon>201602201750284_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602202225018_Initial.resx">
+      <DependentUpon>201602202225018_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

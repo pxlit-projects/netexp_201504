@@ -142,6 +142,7 @@
     <Compile Include="Controllers\GuestRoomsAPIController.cs" />
     <Compile Include="Controllers\GuestRoomsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageURLsAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

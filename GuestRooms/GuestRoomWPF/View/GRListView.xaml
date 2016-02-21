@@ -21,7 +21,7 @@
                         <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -29,14 +29,15 @@
                                 <RowDefinition Height="30"></RowDefinition>
                                 <RowDefinition Height="15"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image Source="{Binding ImageId}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
+                            <Label Content="" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" ></Label>
                                 
-                            <Label Content="{Binding Name}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
+                            <Label Content="{Binding Name}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2"
+                                   FontWeight="Bold"></Label>
                             <StackPanel  Grid.Row="1" Orientation="Horizontal" Grid.Column="1">
-                                <Label Content="test: "></Label>
+                                <Label Content=""></Label>
                                 <Label Content="{Binding Phone}"></Label>
                             </StackPanel>
-                            <Label Content="{Binding Website}" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="2" ></Label>
+                            <Label Content="" Grid.Row="1" Grid.Column="2" ></Label>
 
                         </Grid>
                     </Border>
@@ -46,14 +47,16 @@
 
 
         </ListView>
-        <StackPanel Grid.Column="1"  Orientation="Vertical" HorizontalAlignment="Stretch">
-            <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Name, Mode=OneWay}" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>
-            <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.ProductDescription, Mode=OneWay}" />
-            <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Address.CityName, Mode=OneWay}" />
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel  Orientation="Vertical" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Name, Mode=OneWay}" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>
+                <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Center" Margin="150, 0, 150, 50" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.ProductDescription, Mode=OneWay}" />
+                <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Address.CityName, Mode=OneWay}" />
 
-            <Image Source="{Binding SelectedGuestRoom.Id, Converter={StaticResource localImageConverter}}"
-                   MaxHeight="100" VerticalAlignment="Center"></Image>
-            <Button x:Name="buttonDetail" Content="Show Details" Command="{Binding DetailCommand}" HorizontalAlignment="Center" Margin="5" Padding="5" />
-        </StackPanel>
+                <Image Source="{Binding SelectedGuestRoom.Id, Converter={StaticResource localImageConverter}}"
+                   MaxHeight="500" VerticalAlignment="Center"></Image>
+                <Button x:Name="buttonDetail" Content="Show Details" Command="{Binding DetailCommand}" HorizontalAlignment="Center" Margin="5" Padding="5" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

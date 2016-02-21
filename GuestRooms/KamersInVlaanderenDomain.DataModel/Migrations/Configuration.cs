@@ -89,6 +89,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 imageUrls.ForEach(i => context.ImageURLs.Add(i));
                 context.SaveChanges();
                 imageUrls.ForEach(i => guestRoom.ImageURLs.Add(i));
+                imageUrls.ForEach(i => i.GuestRoom = guestRoom);
                 context.SaveChanges();
 
             }

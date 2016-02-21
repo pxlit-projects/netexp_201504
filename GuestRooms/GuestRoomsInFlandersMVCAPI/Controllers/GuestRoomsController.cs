@@ -18,7 +18,11 @@ namespace GuestRoomsInFlandersMVCAPI.Controllers
         // GET: GuestRooms
         public ActionResult Index()
         {
-            var guestRooms = db.GuestRooms.Include(g => g.Address).Include(g => g.Location);
+            var guestRooms = db.GuestRooms.Include(g => g.Address).Include(g => g.Location);//.Include(g => db.ImageURLs.Where(i => i.GuestRoomId == g.Id).ToList<ImageURL>());
+            /*foreach (GuestRoom guestRoom in guestRooms)
+            {
+                guestRoom.ImageURLs = db.ImageURLs.Where(i => i.GuestRoomId == guestRoom.Id).ToList<ImageURL>();
+            }*/
             return View(guestRooms.ToList());
         }
 

@@ -13,44 +13,44 @@ using KamersInVlaanderenDomain.DataModel;
 
 namespace GuestRoomsInFlandersMVCAPI.Controllers
 {
-    public class GuestRoomsAPIController : ApiController
+    public class ImageURLsAPIController : ApiController
     {
         private KamersContext db = new KamersContext();
 
-        // GET: api/GuestRoomsAPI
-        public IQueryable<GuestRoom> GetGuestRooms()
+        // GET: api/ImageURLsAPI
+        public IQueryable<ImageURL> GetImageURLs()
         {
-            return db.GuestRooms.Include(g => g.Address).Include(g => g.Location);
+            return db.ImageURLs;
         }
 
-        // GET: api/GuestRoomsAPI/5
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult GetGuestRoom(int id)
+        // GET: api/ImageURLsAPI/5
+        [ResponseType(typeof(ImageURL))]
+        public IHttpActionResult GetImageURL(int id)
         {
-            GuestRoom guestRoom = db.GuestRooms.Find(id);
-            if (guestRoom == null)
+            ImageURL imageURL = db.ImageURLs.Find(id);
+            if (imageURL == null)
             {
                 return NotFound();
             }
 
-            return Ok(guestRoom);
+            return Ok(imageURL);
         }
 
-        // PUT: api/GuestRoomsAPI/5
+        // PUT: api/ImageURLsAPI/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutGuestRoom(int id, GuestRoom guestRoom)
+        public IHttpActionResult PutImageURL(int id, ImageURL imageURL)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != guestRoom.Id)
+            if (id != imageURL.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(guestRoom).State = EntityState.Modified;
+            db.Entry(imageURL).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace GuestRoomsInFlandersMVCAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GuestRoomExists(id))
+                if (!ImageURLExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace GuestRoomsInFlandersMVCAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/GuestRoomsAPI
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult PostGuestRoom(GuestRoom guestRoom)
+        // POST: api/ImageURLsAPI
+        [ResponseType(typeof(ImageURL))]
+        public IHttpActionResult PostImageURL(ImageURL imageURL)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.GuestRooms.Add(guestRoom);
+            db.ImageURLs.Add(imageURL);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = guestRoom.Id }, guestRoom);
+            return CreatedAtRoute("DefaultApi", new { id = imageURL.Id }, imageURL);
         }
 
-        // DELETE: api/GuestRoomsAPI/5
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult DeleteGuestRoom(int id)
+        // DELETE: api/ImageURLsAPI/5
+        [ResponseType(typeof(ImageURL))]
+        public IHttpActionResult DeleteImageURL(int id)
         {
-            GuestRoom guestRoom = db.GuestRooms.Find(id);
-            if (guestRoom == null)
+            ImageURL imageURL = db.ImageURLs.Find(id);
+            if (imageURL == null)
             {
                 return NotFound();
             }
 
-            db.GuestRooms.Remove(guestRoom);
+            db.ImageURLs.Remove(imageURL);
             db.SaveChanges();
 
-            return Ok(guestRoom);
+            return Ok(imageURL);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace GuestRoomsInFlandersMVCAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool GuestRoomExists(int id)
+        private bool ImageURLExists(int id)
         {
-            return db.GuestRooms.Count(e => e.Id == id) > 0;
+            return db.ImageURLs.Count(e => e.Id == id) > 0;
         }
     }
 }
