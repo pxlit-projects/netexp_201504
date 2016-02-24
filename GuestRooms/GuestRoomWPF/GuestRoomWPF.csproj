@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,11 +81,15 @@
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModel\GRDetailViewModel.cs" />
     <Compile Include="ViewModel\GRListViewModel.cs" />
+    <Compile Include="ViewModel\GRRateViewModel.cs" />
     <Compile Include="View\GRDetailView.xaml.cs">
       <DependentUpon>GRDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GRListView.xaml.cs">
       <DependentUpon>GRListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GRRateView.xaml.cs">
+      <DependentUpon>GRRateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GRStartView.xaml.cs">
       <DependentUpon>GRStartView.xaml</DependentUpon>
@@ -99,6 +105,10 @@
     <Page Include="View\GRListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\GRRateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\GRStartView.xaml">
       <Generator>MSBuild:Compile</Generator>

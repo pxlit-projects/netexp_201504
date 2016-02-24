@@ -10,12 +10,19 @@
         DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRDetailViewModel}"
         >
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical">
-                <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="{Binding SelectedGuestRoom.Name}" />
-                <TextBlock x:Name="textBlockGRStreet" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom street" />
-                <TextBlock x:Name="textBlockGRCity" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="guestroom city" />
+        <StackPanel Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Name}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.Street}" />
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.HouseNumber}" />
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.BoxNumber}" />
             </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.PostalCode}" />
+                <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.CityName}" />
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Phone}" />
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Website}" />
         </StackPanel>
     </Grid>
 </Window>

@@ -10,5 +10,7 @@ namespace GuestRoomWPF.Services
     {
         void CloseDetailDialog();
         void ShowDetailDialog();
+        void CloseRateDialog();
+        void ShowRateDialog();
     }
 }

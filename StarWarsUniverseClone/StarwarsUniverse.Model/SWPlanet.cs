@@ -5,12 +5,17 @@ namespace StarWarsUniverse.Model
 {
     public class SWPlanet : SWResource
     {
+
+        public SWPlanet()
+        {
+            this.Films = new HashSet<SWMovie>();
+        }
         public string Name { get; set; }
         [JsonProperty("rotation_period")]
-        public int RotationPeriod { get; set; }
+        public string RotationPeriod { get; set; }
         [JsonProperty("orbital_period")]
-        public int OrbitalPeriod { get; set; }
-        public int Diameter { get; set; }
+        public string OrbitalPeriod { get; set; }
+        public string Diameter { get; set; }
         public string Climate { get; set; }
         public string Gravity { get; set; }
         public string Terrain { get; set; }
@@ -18,7 +23,7 @@ namespace StarWarsUniverse.Model
         public string SurfaceWater { get; set; }
         public string Population { get; set; }
         [JsonIgnore]
-        public virtual List<SWMovie> Films { get; set; }
+        public virtual ICollection<SWMovie> Films { get; set; }
         [JsonProperty(PropertyName = "films")]
         public List<string> FilmUris { get; set; }
     }

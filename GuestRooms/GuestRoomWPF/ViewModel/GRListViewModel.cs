@@ -16,6 +16,7 @@ namespace GuestRoomWPF.ViewModel
         private IGRDataService gRDataService;
         private IDialogService dialogService;
         public ICommand DetailCommand { get; set; }
+        public ICommand RateCommand { get; set; }
 
         private void RaisePropertyChanged(string propertyName)
         {
@@ -68,6 +69,7 @@ namespace GuestRoomWPF.ViewModel
         private void LoadCommands()
         {
             DetailCommand = new CustomCommand(DetailGuestRoom, CanDetailGuestRoom);
+            RateCommand = new CustomCommand(RateGuestRoom, CanRateGuestRoom);
         }
 
         private void DetailGuestRoom(object obj)
@@ -78,6 +80,20 @@ namespace GuestRoomWPF.ViewModel
         }
 
         private bool CanDetailGuestRoom(object obj)
+        {
+            if (SelectedGuestRoom != null)
+                return true;
+            return false;
+        }
+
+        private void RateGuestRoom(object obj)
+        {
+            Messenger.Default.Send<GuestRoom>(selectedGuestRoom);
+
+            dialogService.ShowRateDialog();
+        }
+
+        private bool CanRateGuestRoom(object obj)
         {
             if (SelectedGuestRoom != null)
                 return true;

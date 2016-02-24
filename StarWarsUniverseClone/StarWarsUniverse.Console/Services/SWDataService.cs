@@ -4,6 +4,8 @@ using StarWarsUniverse.Model;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Diagnostics;
+
 namespace StarWarsUniverse.Services
 {
     public class SWDataService : ISWDataService
@@ -14,18 +16,19 @@ namespace StarWarsUniverse.Services
             var uri = new Uri(String.Format("{0}?format=json", swapifilms));
             var client = new HttpClient();
             var response = Task.Run(() => client.GetAsync(uri)).Result;
-                response.EnsureSuccessStatusCode();
-                var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
-                    var root = JsonConvert.DeserializeObject<RootObject<SWMovie>>(result);
+            response.EnsureSuccessStatusCode();
+            var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+            Debug.WriteLine("DEBUG ALLMOVIES: " + result);
+            var root = JsonConvert.DeserializeObject<RootObject<SWMovie>>(result);
 
             var movies = root.results;
-            //Add movies
+            //Add planets
             foreach (SWMovie movie in movies)
             {
+                movie.Planets = new List<SWPlanet>();
                 foreach (String s in movie.PlanetUris)
                 {
-                    movie.Planets = new List<SWPlanet>();
-                    movie.Planets.Add(GetSWPlanetDetails(s));
+                   // movie.Planets.Add(GetSWPlanetDetails(s));
                 }
             }
             return movies;
@@ -47,12 +50,13 @@ namespace StarWarsUniverse.Services
             var response = Task.Run(() => client.GetAsync(uri)).Result;
             response.EnsureSuccessStatusCode();
             var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+            Debug.WriteLine("DEBUG ALLPLANETS: " + result);
             var root = JsonConvert.DeserializeObject<RootObject<SWPlanet>>(result);
 
             var planets = root.results;
 
             //Add movies
-            /*foreach(SWPlanet planet in planets)
+            foreach(SWPlanet planet in planets)
             {
                 planet.Films = new List<SWMovie>();
                 foreach (String s in planet.FilmUris)
@@ -61,7 +65,7 @@ namespace StarWarsUniverse.Services
                     
                     planet.Films.Add(GetSWMovieDetails(s));
                 }
-            }*/
+            }
 
             return planets;
         }
@@ -72,7 +76,9 @@ namespace StarWarsUniverse.Services
             var response = Task.Run(() => client.GetAsync(uri)).Result;
             response.EnsureSuccessStatusCode();
             var result = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+            Debug.WriteLine("DEBUG: " + result);
             var planet = JsonConvert.DeserializeObject<SWPlanet>(result);
+            Debug.WriteLine("DEBUG: " + planet.Name + " - " + planet.ResourceUri);
             return planet;
         }
     }

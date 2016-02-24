@@ -6,6 +6,11 @@ namespace StarWarsUniverse.Model
 {
     public class SWMovie : SWResource
     {
+
+        public SWMovie()
+        {
+            Planets = new HashSet<SWPlanet>();
+        }
         public string Title { get; set; }
         public int Episode_ID { get; set; }
         [JsonProperty(PropertyName = "opening_crawl")]
@@ -15,7 +20,7 @@ namespace StarWarsUniverse.Model
         [JsonProperty(PropertyName = "release_date")]
         public DateTime ReleaseDate { get; set; }
         [JsonIgnore]
-        public virtual List<SWPlanet> Planets { get; set; }
+        public virtual ICollection<SWPlanet> Planets { get; set; }
         [JsonProperty(PropertyName = "planets")]
         public List<string> PlanetUris { get; set; }
     }

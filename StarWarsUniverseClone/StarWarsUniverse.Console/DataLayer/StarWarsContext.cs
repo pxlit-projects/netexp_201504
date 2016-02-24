@@ -8,21 +8,28 @@ public class StarWarsContext : DbContext
     public DbSet<SWPlanet> SWPlanets { get; set; }
     protected override void OnModelCreating(DbModelBuilder builder)
     {
-        builder.Entity<SWMovie>().HasKey(m => m.ResourceUri);
+        /*builder.Entity<SWMovie>().HasKey(m => m.ResourceUri);
         builder.Entity<SWPlanet>().HasKey(p => p.ResourceUri);
         builder.Entity<SWMovie>()
                .HasMany<SWPlanet>(m => m.Planets)
                .WithMany(p => p.Films)
                .Map(cs =>
                {
-                   cs.MapLeftKey("SWMovie_ResourceUri");
-                   cs.MapRightKey("SWPlanet_ResourceUri");
+                   cs.MapLeftKey("SWMovies_ResourceUri");
+                   cs.MapRightKey("SWPlanets_ResourceUri");
                    cs.ToTable("SWPlanetsSWMovies");
-               });
+               });*/
 
+        builder.Entity<SWMovie>()
+            .HasMany<SWPlanet>(s => s.Planets)
+            .WithMany(s => s.Films)
+            .Map(x =>
+        {
+            x.MapLeftKey("SWMovies_ResourceUri");
+            x.MapRightKey("SWPlanets_ResourceUri");
+            x.ToTable("SWPlanetsSWMovies");
 
-
-        
+        });
     }
     
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KamersInVlaanderen;
+using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -13,15 +15,19 @@ namespace GuestRoomWPF.Converter
 
             if (targetType != typeof(ImageSource))
                 throw new InvalidOperationException("Target type must be System.Windows.Media.ImageSource.");
-
-
+            
             try
             {
                 BitmapImage img = new BitmapImage();
                 img.BeginInit();
            
+                if (value != null)
+                {
+                    var url = (List<ImageURL>)value;
+                    img.UriSource = new Uri(url.ToArray()[0].URL);
+                }
                 //img.UriSource = new Uri("/JoeCoffeeStore.StockManagement.App;component/Images/coffee" + value + ".jpg", UriKind.Relative);
-                img.UriSource = new Uri("http://images.visitflanders.org/original/2723261/e26389f6-8b74-4aaa-877b-b3c056e5571c.jpg");
+                //img.UriSource = new Uri("http://images.visitflanders.org/original/2723261/e26389f6-8b74-4aaa-877b-b3c056e5571c.jpg");
                 img.EndInit();
                 return img;
             }

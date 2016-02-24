@@ -11,6 +11,7 @@ namespace GuestRoomWPF.Services
     {
 
         Window gRDetailView = null;
+        Window gRRateView = null;
 
         public DialogService()
         {
@@ -26,6 +27,18 @@ namespace GuestRoomWPF.Services
         {
             if (gRDetailView != null)
                 gRDetailView.Close();
+        }
+
+        public void ShowRateDialog()
+        {
+            gRRateView = new GRRateView();
+            gRRateView.ShowDialog();
+        }
+
+        public void CloseRateDialog()
+        {
+            if (gRRateView != null)
+                gRRateView.Close();
         }
     }
 }

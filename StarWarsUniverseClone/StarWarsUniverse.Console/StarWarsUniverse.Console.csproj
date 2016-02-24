@@ -69,6 +69,22 @@
     <Compile Include="Migrations\201602091449461_adjustments1.Designer.cs">
       <DependentUpon>201602091449461_adjustments1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602091900320_Planet_intToString.cs" />
+    <Compile Include="Migrations\201602091900320_Planet_intToString.Designer.cs">
+      <DependentUpon>201602091900320_Planet_intToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602091910410_TestingContext.cs" />
+    <Compile Include="Migrations\201602091910410_TestingContext.Designer.cs">
+      <DependentUpon>201602091910410_TestingContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602091913215_TestingContext2.cs" />
+    <Compile Include="Migrations\201602091913215_TestingContext2.Designer.cs">
+      <DependentUpon>201602091913215_TestingContext2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160921057_TestingContext3.cs" />
+    <Compile Include="Migrations\201602160921057_TestingContext3.Designer.cs">
+      <DependentUpon>201602160921057_TestingContext3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +111,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602091449461_adjustments1.resx">
       <DependentUpon>201602091449461_adjustments1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091900320_Planet_intToString.resx">
+      <DependentUpon>201602091900320_Planet_intToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091910410_TestingContext.resx">
+      <DependentUpon>201602091910410_TestingContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091913215_TestingContext2.resx">
+      <DependentUpon>201602091913215_TestingContext2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160921057_TestingContext3.resx">
+      <DependentUpon>201602160921057_TestingContext3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

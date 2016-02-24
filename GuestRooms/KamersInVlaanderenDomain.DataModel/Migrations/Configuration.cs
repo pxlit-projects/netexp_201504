@@ -24,8 +24,8 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
             );*/
 
             // use second instance of visual studio to debug seed method
-            /*if (!System.Diagnostics.Debugger.IsAttached)
-                System.Diagnostics.Debugger.Launch();*/
+            if (!System.Diagnostics.Debugger.IsAttached)
+                System.Diagnostics.Debugger.Launch();
 
             GRJSONDataService dataService = new GRJSONDataService();
 
@@ -55,8 +55,14 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 Location location = new Location();
                 if (guestRoomJSON.X != "" || guestRoomJSON.Y != "")
                 {
-                    location.X = Convert.ToDouble(guestRoomJSON.X);
-                    location.Y = Convert.ToDouble(guestRoomJSON.Y);
+                    try {
+                        location.X = Convert.ToDouble(guestRoomJSON.X);
+                        location.Y = Convert.ToDouble(guestRoomJSON.Y);
+                    }
+                    catch
+                    {
+                        var z = guestRoom.Name;
+                    }
                 }
                 else
                 {
@@ -89,7 +95,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 imageUrls.ForEach(i => context.ImageURLs.Add(i));
                 context.SaveChanges();
                 imageUrls.ForEach(i => guestRoom.ImageURLs.Add(i));
-                imageUrls.ForEach(i => i.GuestRoom = guestRoom);
+                //imageUrls.ForEach(i => i.GuestRoom = guestRoom);
                 context.SaveChanges();
 
             }
