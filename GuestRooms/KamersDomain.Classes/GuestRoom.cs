@@ -76,6 +76,7 @@ namespace KamersInVlaanderen
         //virtual gives error at azure ap
         //public virtual ICollection<ImageURL> ImageURLs { get; set; }
         public ICollection<ImageURL> ImageURLs { get; set; }
+        public ICollection<Rating> Ratings { get; set; }
         //public int ImageURLsId { get; set; }
 
 

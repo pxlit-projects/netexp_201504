@@ -7,5 +7,6 @@ namespace KamersInVlaanderenDomain.DataModel.Services
     {
         List<GuestRoom> getGuestRooms();
         GuestRoom getGuestRoom(int id);
+        void saveRating(Rating rating);
     }
 }

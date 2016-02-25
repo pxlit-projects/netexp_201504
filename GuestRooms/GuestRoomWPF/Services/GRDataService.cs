@@ -26,5 +26,10 @@ namespace GuestRoomWPF.Services
         {
             return repo.getGuestRoom(id);
         }
+
+        public void saveRating(Rating rating)
+        {
+            repo.saveRating(rating);
+        }
     }
 }

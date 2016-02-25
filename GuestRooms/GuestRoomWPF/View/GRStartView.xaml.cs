@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GuestRoomWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,22 @@ namespace GuestRoomWPF
     /// </summary>
     public partial class GRStartView : Window
     {
+        
+
         public GRStartView()
         {
             InitializeComponent();
+
+            //added to close startup window
+            var vm = (GRStartViewModel)this.DataContext;
+            vm.RequestClose += delegate (object sender, EventArgs args) { this.Close(); };
         }
 
-        private void buttonStart_Click(object sender, RoutedEventArgs e)
+        /*private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
             GRListView listWindow = new GRListView();
             listWindow.Show();
             this.Close();
-        }
+        }*/
     }
 }

@@ -2,10 +2,10 @@
 {
     public class Rating
     {
-        public int id { get; set; }
-        public GuestRoom guestroom { get; set; }
-        public int guestroomId { get; set; }
-        public User user { get; set; }
-        public int userId { get; set; }
+        public int Id { get; set; }
+        //public GuestRoom guestroom { get; set; }
+        public int GuestroomId { get; set; }
+        public string User { get; set; }
+        public int Value { get; set; }
     }
 }

@@ -11,7 +11,7 @@
         >
     <Grid>
         <StackPanel Orientation="Vertical">
-            <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Name}" />
+            <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Name}" FontSize="14" FontWeight="Bold" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.Street}" />
                 <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.HouseNumber}" />

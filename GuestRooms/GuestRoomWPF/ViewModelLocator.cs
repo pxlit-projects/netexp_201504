@@ -1,11 +1,6 @@
 ﻿using GuestRoomWPF.Services;
 using GuestRoomWPF.ViewModel;
 using KamersInVlaanderenDomain.DataModel.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GuestRoomWPF
 {
@@ -14,8 +9,10 @@ namespace GuestRoomWPF
         private static IDialogService dialogService = new DialogService();
         private static IGRDataService gRDataService = new GRDataService(new GRDisconnectedRepository());
 
+        private static GRStartViewModel gRStartViewModel = new GRStartViewModel(gRDataService, dialogService);
         private static GRListViewModel gRListViewModel = new GRListViewModel(gRDataService, dialogService);
         private static GRDetailViewModel gRDetailViewModel = new GRDetailViewModel(dialogService);
+        private static GRRateViewModel gRRateViewModel = new GRRateViewModel(gRDataService, dialogService);
 
         public static GRDetailViewModel GRDetailViewModel
         {
@@ -30,6 +27,22 @@ namespace GuestRoomWPF
             get
             {
                 return gRListViewModel;
+            }
+        }
+
+        public static GRStartViewModel GRStartViewModel
+        {
+            get
+            {
+                return gRStartViewModel;
+            }
+        }
+
+        public static GRRateViewModel GRRateViewModel
+        {
+            get
+            {
+                return gRRateViewModel;
             }
         }
     }

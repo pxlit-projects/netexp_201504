@@ -82,6 +82,7 @@
     <Compile Include="ViewModel\GRDetailViewModel.cs" />
     <Compile Include="ViewModel\GRListViewModel.cs" />
     <Compile Include="ViewModel\GRRateViewModel.cs" />
+    <Compile Include="ViewModel\GRStartViewModel.cs" />
     <Compile Include="View\GRDetailView.xaml.cs">
       <DependentUpon>GRDetailView.xaml</DependentUpon>
     </Compile>

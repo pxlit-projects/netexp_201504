@@ -11,5 +11,6 @@ namespace GuestRoomWPF.Services
     {
         List<GuestRoom> getAllGuestRooms();
         GuestRoom getGuestRoomDetail(int id);
+        void saveRating(Rating rating);
     }
 }

@@ -12,7 +12,7 @@ namespace KamersInVlaanderenDomain.DataModel
         //public DbSet<License> Licenses { get; set; }
         //public DbSet<Prices> Prices { get; set; }
         //public DbSet<User> Users { get; set; }
-        //public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //one-to-many 

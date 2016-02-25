@@ -6,13 +6,12 @@
         xmlns:local="clr-namespace:GuestRoomWPF"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
-        Title="Guestrooms In Flanders" Height="350" Width="525">
+        Title="Guestrooms In Flanders" Height="150" Width="425"
+        DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRStartViewModel}">
     <Grid>
         <StackPanel VerticalAlignment="Center">
             <TextBlock x:Name="textBlockTitle" HorizontalAlignment="Center" Margin="20" TextWrapping="Wrap" Text="Guestrooms in Flanders" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Choose a nickname:" />
-            <TextBox x:Name="textBoxUsername" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Width="77" Text="Anonymous"/>
-            <Button x:Name="buttonStart" Content="Enter" HorizontalAlignment="Center" Margin="5" Padding="5" Click="buttonStart_Click" />
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Loading guestrooms..." />
         </StackPanel>
         
     </Grid>

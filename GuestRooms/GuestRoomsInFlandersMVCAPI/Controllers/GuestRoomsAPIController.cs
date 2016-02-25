@@ -20,7 +20,7 @@ namespace GuestRoomsInFlandersMVCAPI.Controllers
         // GET: api/GuestRoomsAPI
         public IQueryable<GuestRoom> GetGuestRooms()
         {
-            var test = db.GuestRooms.Include(g => g.Address).Include(g => g.Location).Include(g => g.ImageURLs);
+            var test = db.GuestRooms.Include(g => g.Address).Include(g => g.Location).Include(g => g.ImageURLs).Include(g => g.Ratings);
             /*foreach(var t in test)
             {
                 var images = db.ImageURLs.Where(x => x.GuestRoomId == t.Id);

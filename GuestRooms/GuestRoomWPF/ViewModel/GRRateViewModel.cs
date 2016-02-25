@@ -1,19 +1,16 @@
 ﻿using GuestRoomWPF.Services;
 using GuestRoomWPF.Utility;
 using KamersInVlaanderen;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace GuestRoomWPF.ViewModel
 {
-    class GRRateViewModel : INotifyPropertyChanged
+    public class GRRateViewModel : INotifyPropertyChanged
     {
+        private IGRDataService gRDataService;
         private IDialogService dialogService;
-
+        public ICommand RatingCommand { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
 
@@ -38,11 +35,61 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRRateViewModel(IDialogService dialogService)
+        private string user = "Anonymous";
+        public string User
+        {
+            get
+            {
+                return user;
+            }
+            set
+            {
+                user = value;
+                RaisePropertyChanged("User");
+            }
+        }
+
+        private int rating = 5;
+        public int Rating
+        {
+            get
+            {
+                return rating;
+            }
+            set
+            {
+                rating = value;
+                RaisePropertyChanged("Rating");
+            }
+        }
+
+        public GRRateViewModel(IGRDataService gRDataService, IDialogService dialogService)
         {
             this.dialogService = dialogService;
-
+            this.gRDataService = gRDataService;
             Messenger.Default.Register<GuestRoom>(this, OnGuestRoomReceived);
+            LoadCommands();
+        }
+
+        private void LoadCommands()
+        {
+            RatingCommand = new CustomCommand(RatingGuestRoom, CanRatingGuestRoom);
+        }
+
+        private void RatingGuestRoom(object obj)
+        {
+            Rating r = new Rating();
+            r.User = user;
+            r.GuestroomId = selectedGuestRoom.Id;
+            r.Value = rating;
+            gRDataService.saveRating(r);
+        }
+
+        private bool CanRatingGuestRoom(object obj)
+        {
+            if (SelectedGuestRoom != null)
+                return true;
+            return false;
         }
 
         public void OnGuestRoomReceived(GuestRoom guestRoom)

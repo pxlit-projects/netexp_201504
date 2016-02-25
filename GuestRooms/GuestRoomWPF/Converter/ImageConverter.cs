@@ -24,7 +24,10 @@ namespace GuestRoomWPF.Converter
                 if (value != null)
                 {
                     var url = (List<ImageURL>)value;
-                    img.UriSource = new Uri(url.ToArray()[0].URL);
+                    if(url.ToArray().Length > 0)
+                    {
+                        img.UriSource = new Uri(url.ToArray()[0].URL);
+                    }
                 }
                 //img.UriSource = new Uri("/JoeCoffeeStore.StockManagement.App;component/Images/coffee" + value + ".jpg", UriKind.Relative);
                 //img.UriSource = new Uri("http://images.visitflanders.org/original/2723261/e26389f6-8b74-4aaa-877b-b3c056e5571c.jpg");

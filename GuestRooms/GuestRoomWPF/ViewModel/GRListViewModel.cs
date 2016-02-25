@@ -57,14 +57,21 @@ namespace GuestRoomWPF.ViewModel
         {
             this.gRDataService = gRDataService;
             this.dialogService = dialogService;
-            LoadData();
+            
+            Messenger.Default.Register<ObservableCollection<GuestRoom>>(this, OnGuestRoomsReceived);
+            //LoadData();
             LoadCommands();
         }
 
-        private void LoadData()
+        private void OnGuestRoomsReceived(ObservableCollection<GuestRoom> guestRooms)
+        {
+            GuestRooms = guestRooms;
+        }
+
+        /*private void LoadData()
         {
             GuestRooms = gRDataService.getAllGuestRooms().ToObservableCollection();
-        }
+        }*/
 
         private void LoadCommands()
         {

@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,12 +61,18 @@
     <Compile Include="Migrations\201602202225018_Initial.Designer.cs">
       <DependentUpon>201602202225018_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602241913210_RatingsAdded.cs" />
+    <Compile Include="Migrations\201602241913210_RatingsAdded.Designer.cs">
+      <DependentUpon>201602241913210_RatingsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602242350508_ratingUpdate.cs" />
+    <Compile Include="Migrations\201602242350508_ratingUpdate.Designer.cs">
+      <DependentUpon>201602242350508_ratingUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\GRConnectedRepository.cs" />
     <Compile Include="Services\GRJSONDataService.cs" />
     <Compile Include="Services\GRDisconnectedRepository.cs" />
-    <Compile Include="Services\IGRConnectedRepository.cs" />
     <Compile Include="Services\IGRJSONDataService.cs" />
     <Compile Include="Services\IGRDisconnectedRepository.cs" />
     <Compile Include="Settings.cs" />
@@ -83,6 +90,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602202225018_Initial.resx">
       <DependentUpon>201602202225018_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241913210_RatingsAdded.resx">
+      <DependentUpon>201602241913210_RatingsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602242350508_ratingUpdate.resx">
+      <DependentUpon>201602242350508_ratingUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
