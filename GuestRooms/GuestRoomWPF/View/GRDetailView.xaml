@@ -2,10 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:GuestRoomWPF.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuestRoomWPF"
         mc:Ignorable="d"
-        Title="Guestrooms In Flanders" Height="300" Width="300"
+        Title="{x:Static p:Resources.AppTitle}" Height="300" Width="300"
         WindowStartupLocation="CenterScreen"
         DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRDetailViewModel}"
         >

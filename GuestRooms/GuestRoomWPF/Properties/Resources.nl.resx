@@ -118,30 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppTitle" xml:space="preserve">
-    <value>Guestrooms in Flanders</value>
+    <value>Gastenkamers in Vlaanderen</value>
   </data>
   <data name="DefaultUser" xml:space="preserve">
-    <value>Anonymous</value>
+    <value>Anoniem</value>
   </data>
   <data name="GRListViewButtonDetail" xml:space="preserve">
-    <value>Show Details</value>
+    <value>Toon Details</value>
   </data>
   <data name="GRListViewButtonRate" xml:space="preserve">
-    <value>Rate</value>
+    <value>Waardeer</value>
   </data>
   <data name="GRListViewButtonRating" xml:space="preserve">
-    <value>Send Rating</value>
+    <value>Verstuur waardering</value>
   </data>
   <data name="GRRateViewTextBlockRatingSlider" xml:space="preserve">
-    <value>Use the slider to set your rating:</value>
+    <value>Gebruik de slider om je waardering in te stellen:</value>
   </data>
   <data name="GRRateViewTextBlockUser" xml:space="preserve">
-    <value>Enter your name:</value>
+    <value>Naam:</value>
   </data>
   <data name="GRStartViewTextBlockLoading" xml:space="preserve">
-    <value>Loading Guestrooms...</value>
+    <value>Gastenkamers worden geladen...</value>
   </data>
   <data name="Rating" xml:space="preserve">
-    <value>Rating:</value>
+    <value>Waardering:</value>
   </data>
 </root>

@@ -28,13 +28,15 @@ namespace GuestRoomWPF.Converter
                     {
                         img.UriSource = new Uri(url.ToArray()[0].URL);
                     }
+                    else
+                    {
+                        img.UriSource = new Uri("http://www.visituganda.com/uploads/noimage.png");
+                    }
                 }
-                //img.UriSource = new Uri("/JoeCoffeeStore.StockManagement.App;component/Images/coffee" + value + ".jpg", UriKind.Relative);
-                //img.UriSource = new Uri("http://images.visitflanders.org/original/2723261/e26389f6-8b74-4aaa-877b-b3c056e5571c.jpg");
                 img.EndInit();
                 return img;
             }
-            catch (Exception ex)
+            catch 
             {
                 return DependencyProperty.UnsetValue;
             }

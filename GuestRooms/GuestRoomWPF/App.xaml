@@ -8,6 +8,7 @@
         <ResourceDictionary>
             <local:ViewModelLocator x:Key="mainViewModelLocator"></local:ViewModelLocator>
             <converter:ImageConverter x:Key="localImageConverter"></converter:ImageConverter>
+            <converter:RatingConverter x:Key="localRatingConverter"></converter:RatingConverter>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

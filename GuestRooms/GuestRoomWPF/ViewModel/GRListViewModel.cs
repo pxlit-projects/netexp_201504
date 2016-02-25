@@ -96,7 +96,7 @@ namespace GuestRoomWPF.ViewModel
         private void RateGuestRoom(object obj)
         {
             Messenger.Default.Send<GuestRoom>(selectedGuestRoom);
-
+            Messenger.Default.Send<IDialogService>(dialogService);
             dialogService.ShowRateDialog();
         }
 

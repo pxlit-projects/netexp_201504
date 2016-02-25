@@ -3,6 +3,7 @@ using GuestRoomWPF.Utility;
 using KamersInVlaanderen;
 using System.ComponentModel;
 using System.Windows.Input;
+using System;
 
 namespace GuestRoomWPF.ViewModel
 {
@@ -35,7 +36,7 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        private string user = "Anonymous";
+        private string user = GuestRoomWPF.Properties.Resources.DefaultUser;
         public string User
         {
             get
@@ -63,12 +64,18 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRRateViewModel(IGRDataService gRDataService, IDialogService dialogService)
+        public GRRateViewModel(IGRDataService gRDataService)
         {
-            this.dialogService = dialogService;
+            //this.dialogService = dialogService;
             this.gRDataService = gRDataService;
             Messenger.Default.Register<GuestRoom>(this, OnGuestRoomReceived);
+            Messenger.Default.Register<IDialogService>(this, OnDialogServiceReceived);
             LoadCommands();
+        }
+
+        private void OnDialogServiceReceived(IDialogService dialogService)
+        {
+            this.dialogService = dialogService;
         }
 
         private void LoadCommands()
@@ -82,7 +89,10 @@ namespace GuestRoomWPF.ViewModel
             r.User = user;
             r.GuestroomId = selectedGuestRoom.Id;
             r.Value = rating;
+            selectedGuestRoom.Ratings.Add(r);
             gRDataService.saveRating(r);
+            //dialogService.CloseRateDialog(); TODO dialogService = null ?
+            RaisePropertyChanged("SelectedGuestRoom");
         }
 
         private bool CanRatingGuestRoom(object obj)

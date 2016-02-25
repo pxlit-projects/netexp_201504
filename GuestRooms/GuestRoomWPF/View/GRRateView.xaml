@@ -2,10 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:GuestRoomWPF.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuestRoomWPF"
         mc:Ignorable="d"
-        Title="Rate GuestRoom" Height="300" Width="400"
+        Title="{x:Static p:Resources.AppTitle}" Height="300" Width="400"
         WindowStartupLocation="CenterScreen"
         DataContext="{Binding Source={StaticResource mainViewModelLocator},  Path=GRRateViewModel}">
     <Grid>
@@ -13,19 +14,19 @@
             <TextBlock x:Name="textBlockName" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" 
                        Text="{Binding SelectedGuestRoom.Name}" FontSize="14" FontWeight="Bold"/>
             <TextBlock x:Name="textBlockUser" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" 
-                       Text="Enter your Name:" />
+                       Text="{x:Static p:Resources.GRRateViewTextBlockUser}" />
             <TextBox x:Name="textBoxUser" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" 
                       Text="{Binding User}"/>
-            <TextBlock x:Name="textBlockRatingSlider" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="Use the Slider to set your rating:" />
+            <TextBlock x:Name="textBlockRatingSlider" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{x:Static p:Resources.GRRateViewTextBlockRatingSlider}" />
             <Slider Name="Slider" Margin="10" Minimum="1" Maximum="5" Value="{Binding Rating}"
                 TickFrequency="1" IsSnapToTickEnabled="True"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" 
-                         Text="Rating:"/>
+                         Text="{x:Static p:Resources.Rating}"/>
                 <TextBlock x:Name="textBlockRating" HorizontalAlignment="Center" Margin="5" TextWrapping="Wrap" 
                          Text="{Binding Rating}"/>
             </StackPanel>
-            <Button x:Name="buttonStart" Content="Send Rating" Command="{Binding RatingCommand}" HorizontalAlignment="Center" Margin="5" Padding="5"  />
+            <Button x:Name="buttonRating" Content="{x:Static p:Resources.GRListViewButtonRating}" Command="{Binding RatingCommand}" HorizontalAlignment="Center" Margin="5" Padding="5"  />
         </StackPanel>
     </Grid>
 </Window>

@@ -76,8 +76,35 @@ namespace KamersInVlaanderen
         //virtual gives error at azure ap
         //public virtual ICollection<ImageURL> ImageURLs { get; set; }
         public ICollection<ImageURL> ImageURLs { get; set; }
+
+        //not opendata fields
         public ICollection<Rating> Ratings { get; set; }
-        //public int ImageURLsId { get; set; }
+        public double AverageRating {
+            get
+            {
+                var count = Ratings.Count;
+                if (count == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    var total = 0;
+                    foreach(Rating r in Ratings)
+                    {
+                        total += r.Value; 
+                    }
+                    return (double)total / count;
+                }
+                
+            }
+            set
+            {
+
+            }
+        }
+        public double distanceFromCoordinates { get; set; }
+
 
 
     }
