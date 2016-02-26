@@ -14,8 +14,30 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListView Name="GuestRoomListView" Height="Auto" Margin="5" VerticalAlignment="Center" 
-                    Grid.Column="0" ItemsSource="{Binding GuestRooms}" SelectedItem="{Binding SelectedGuestRoom}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" >
+            <TextBlock x:Name="textBlockCoordinates" HorizontalAlignment="Center" Margin="1" TextWrapping="Wrap"
+                           Text="{x:Static p:Resources.Coordinates}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="textBlockXCoordinate" HorizontalAlignment="Center" Margin="1" TextWrapping="Wrap"
+                           Text="{x:Static p:Resources.XCoordinate}"/>
+                <TextBox x:Name="textBoxXCoordinate" HorizontalAlignment="Center" Margin="1" Padding="1" Width="50" TextWrapping="Wrap" 
+                          Text="{Binding XCoordinate}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="textBlockYCoordinate" HorizontalAlignment="Center" Margin="1" TextWrapping="Wrap"
+                           Text="{x:Static p:Resources.YCoordinate}"/>
+                <TextBox x:Name="textBoxYCoordinate" HorizontalAlignment="Center" Margin="1" Padding="1" Width="50" TextWrapping="Wrap" 
+                      Text="{Binding YCoordinate}"/>
+            </StackPanel>
+            <Button x:Name="buttonDistance" Content="{x:Static p:Resources.GRListViewButtonDistance}" Command="{Binding SortCommand}"
+                    HorizontalAlignment="Center"  Margin="1" Padding="5" />
+        </StackPanel>
+        <ListView Name="GuestRoomListView" Grid.Column="0" Grid.Row="1" Height="Auto" Margin="5" VerticalAlignment="Center" 
+                    ItemsSource="{Binding GuestRooms}" SelectedItem="{Binding SelectedGuestRoom}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -35,7 +57,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
             <StackPanel  Orientation="Vertical" HorizontalAlignment="Stretch">
                 <TextBlock x:Name="textBlockGRName" HorizontalAlignment="Center" Margin="50" TextWrapping="Wrap" 
                            Text="{Binding SelectedGuestRoom.Name, Mode=OneWay}" FontSize="34" FontWeight="Bold" FontFamily="Vivaldi"/>

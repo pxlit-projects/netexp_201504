@@ -6,6 +6,8 @@ using GuestRoomWPF.Extensions;
 using System.Windows.Input;
 using GuestRoomWPF.Utility;
 using GuestRoomWPF.Messages;
+using System;
+using System.Collections.Generic;
 
 namespace GuestRoomWPF.ViewModel
 {
@@ -17,6 +19,7 @@ namespace GuestRoomWPF.ViewModel
         private IDialogService dialogService;
         public ICommand DetailCommand { get; set; }
         public ICommand RateCommand { get; set; }
+        public ICommand SortCommand { get; set; }
 
         private void RaisePropertyChanged(string propertyName)
         {
@@ -39,7 +42,6 @@ namespace GuestRoomWPF.ViewModel
         }
 
         private GuestRoom selectedGuestRoom;
-
         public GuestRoom SelectedGuestRoom
         {
             get
@@ -50,6 +52,34 @@ namespace GuestRoomWPF.ViewModel
             {
                 selectedGuestRoom = value;
                 RaisePropertyChanged("SelectedGuestRoom");
+            }
+        }
+
+        private double xCoordinate;
+        public double XCoordinate
+        {
+            get
+            {
+                return xCoordinate;
+            }
+            set
+            {
+                xCoordinate = value;
+                RaisePropertyChanged("XCoordinate");
+            }
+        }
+
+        private double yCoordinate;
+        public double YCoordinate
+        {
+            get
+            {
+                return yCoordinate;
+            }
+            set
+            {
+                yCoordinate = value;
+                RaisePropertyChanged("YCoordinate");
             }
         }
 
@@ -85,6 +115,31 @@ namespace GuestRoomWPF.ViewModel
         {
             DetailCommand = new CustomCommand(DetailGuestRoom, CanDetailGuestRoom);
             RateCommand = new CustomCommand(RateGuestRoom, CanRateGuestRoom);
+            SortCommand = new CustomCommand(SortGuestRooms, CanSortGuestRooms);
+        }
+
+        private bool CanSortGuestRooms(object obj)
+        {
+            if (xCoordinate < 20000 || xCoordinate > 300000)
+                return false;
+            if (yCoordinate < 20000 || yCoordinate > 300000)
+                return false;
+            return true;
+        }
+
+        private void SortGuestRooms(object obj)
+        {
+            //double xBilzen = 230000.0;
+            //double yBilzen = 170000.0;
+
+
+            var notSorted = new List<GuestRoom>(guestRooms);
+            foreach(GuestRoom guestroom in notSorted)
+            {
+                guestroom.distanceFromCoordinates = Math.Sqrt(Math.Pow((xCoordinate - guestroom.Location.X), 2.0) + Math.Pow((yCoordinate - guestroom.Location.Y),2.0));
+            }
+            notSorted.Sort((x, y) => x.distanceFromCoordinates.CompareTo(y.distanceFromCoordinates));
+            GuestRooms = notSorted.ToObservableCollection<GuestRoom>();
         }
 
         private void DetailGuestRoom(object obj)
@@ -96,7 +151,7 @@ namespace GuestRoomWPF.ViewModel
 
         private bool CanDetailGuestRoom(object obj)
         {
-            if (SelectedGuestRoom != null)
+            if (SelectedGuestRoom != null && SelectedGuestRoom.ProductDescription != GuestRoomWPF.Properties.Resources.GRListViewChoose)
                 return true;
             return false;
         }
@@ -109,7 +164,7 @@ namespace GuestRoomWPF.ViewModel
 
         private bool CanRateGuestRoom(object obj)
         {
-            if (SelectedGuestRoom != null)
+            if (SelectedGuestRoom != null && SelectedGuestRoom.ProductDescription != GuestRoomWPF.Properties.Resources.GRListViewChoose)
                 return true;
             return false;
         }

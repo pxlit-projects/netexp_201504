@@ -120,11 +120,17 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Gastenkamers in Vlaanderen</value>
   </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>Coordinaten (Lambert 72):</value>
+  </data>
   <data name="DefaultUser" xml:space="preserve">
     <value>Anoniem</value>
   </data>
   <data name="GRListViewButtonDetail" xml:space="preserve">
     <value>Toon Details</value>
+  </data>
+  <data name="GRListViewButtonDistance" xml:space="preserve">
+    <value>Sorteer op afstand</value>
   </data>
   <data name="GRListViewButtonRate" xml:space="preserve">
     <value>Waardeer</value>
@@ -146,5 +152,11 @@
   </data>
   <data name="Rating" xml:space="preserve">
     <value>Waardering:</value>
+  </data>
+  <data name="XCoordinate" xml:space="preserve">
+    <value>X-Coordinaat:</value>
+  </data>
+  <data name="YCoordinate" xml:space="preserve">
+    <value>Y-Coordinaat:</value>
   </data>
 </root>

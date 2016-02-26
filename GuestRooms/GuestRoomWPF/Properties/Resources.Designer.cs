@@ -70,6 +70,15 @@ namespace GuestRoomWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coordinates (Lambert 72):.
+        /// </summary>
+        public static string Coordinates {
+            get {
+                return ResourceManager.GetString("Coordinates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Anonymous.
         /// </summary>
         public static string DefaultUser {
@@ -84,6 +93,15 @@ namespace GuestRoomWPF.Properties {
         public static string GRListViewButtonDetail {
             get {
                 return ResourceManager.GetString("GRListViewButtonDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort on Distance.
+        /// </summary>
+        public static string GRListViewButtonDistance {
+            get {
+                return ResourceManager.GetString("GRListViewButtonDistance", resourceCulture);
             }
         }
         
@@ -147,6 +165,24 @@ namespace GuestRoomWPF.Properties {
         public static string Rating {
             get {
                 return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X Coordinate:.
+        /// </summary>
+        public static string XCoordinate {
+            get {
+                return ResourceManager.GetString("XCoordinate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Y Coordinate:.
+        /// </summary>
+        public static string YCoordinate {
+            get {
+                return ResourceManager.GetString("YCoordinate", resourceCulture);
             }
         }
     }

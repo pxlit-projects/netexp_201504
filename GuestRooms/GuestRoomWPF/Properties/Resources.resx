@@ -120,11 +120,17 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Guestrooms in Flanders</value>
   </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>Coordinates (Lambert 72):</value>
+  </data>
   <data name="DefaultUser" xml:space="preserve">
     <value>Anonymous</value>
   </data>
   <data name="GRListViewButtonDetail" xml:space="preserve">
     <value>Show Details</value>
+  </data>
+  <data name="GRListViewButtonDistance" xml:space="preserve">
+    <value>Sort on Distance</value>
   </data>
   <data name="GRListViewButtonRate" xml:space="preserve">
     <value>Rate</value>
@@ -146,5 +152,11 @@
   </data>
   <data name="Rating" xml:space="preserve">
     <value>Rating:</value>
+  </data>
+  <data name="XCoordinate" xml:space="preserve">
+    <value>X Coordinate:</value>
+  </data>
+  <data name="YCoordinate" xml:space="preserve">
+    <value>Y Coordinate:</value>
   </data>
 </root>
