@@ -55,7 +55,8 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 Location location = new Location();
                 if (guestRoomJSON.X != "" || guestRoomJSON.Y != "")
                 {
-                    try {
+                    try
+                    {
                         location.X = Convert.ToDouble(guestRoomJSON.X);
                         location.Y = Convert.ToDouble(guestRoomJSON.Y);
                     }

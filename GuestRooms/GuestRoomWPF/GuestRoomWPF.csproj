@@ -73,6 +73,7 @@
     <Compile Include="Converter\ImageConverter.cs" />
     <Compile Include="Converter\RatingConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Messages\UpdateListMessage.cs" />
     <Compile Include="Properties\Resources.en.Designer.cs">
       <DependentUpon>Resources.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>

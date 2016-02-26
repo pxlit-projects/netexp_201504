@@ -132,6 +132,9 @@
   <data name="GRListViewButtonRating" xml:space="preserve">
     <value>Verstuur waardering</value>
   </data>
+  <data name="GRListViewChoose" xml:space="preserve">
+    <value>Kies een gastenkamer in de lijst om weer te geven.</value>
+  </data>
   <data name="GRRateViewTextBlockRatingSlider" xml:space="preserve">
     <value>Gebruik de slider om je waardering in te stellen:</value>
   </data>

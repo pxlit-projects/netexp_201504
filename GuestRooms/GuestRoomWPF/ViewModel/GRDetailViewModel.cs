@@ -1,22 +1,12 @@
-﻿using GuestRoomWPF.Services;
-using GuestRoomWPF.Utility;
+﻿using GuestRoomWPF.Utility;
 using KamersInVlaanderen;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GuestRoomWPF.ViewModel
 {
     public class GRDetailViewModel : INotifyPropertyChanged
     {
-        private IDialogService dialogService;
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -37,17 +27,15 @@ namespace GuestRoomWPF.ViewModel
                 RaisePropertyChanged("SelectedGuestRoom");
             }
         }
-
-        public GRDetailViewModel(IDialogService dialogService)
+        public GRDetailViewModel()
         {
-            this.dialogService = dialogService;
 
             Messenger.Default.Register<GuestRoom>(this, OnGuestRoomReceived);
         }
 
         public void OnGuestRoomReceived(GuestRoom guestRoom)
         {
-            SelectedGuestRoom = guestRoom;
+            selectedGuestRoom = guestRoom;
         }
     }
 }

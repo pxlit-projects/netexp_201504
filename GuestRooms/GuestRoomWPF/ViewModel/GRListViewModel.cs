@@ -1,11 +1,11 @@
 ﻿using KamersInVlaanderen;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System;
 using GuestRoomWPF.Services;
 using GuestRoomWPF.Extensions;
 using System.Windows.Input;
 using GuestRoomWPF.Utility;
+using GuestRoomWPF.Messages;
 
 namespace GuestRoomWPF.ViewModel
 {
@@ -57,10 +57,18 @@ namespace GuestRoomWPF.ViewModel
         {
             this.gRDataService = gRDataService;
             this.dialogService = dialogService;
-            
+            selectedGuestRoom = new GuestRoom();
+            selectedGuestRoom.ProductDescription = GuestRoomWPF.Properties.Resources.GRListViewChoose;
             Messenger.Default.Register<ObservableCollection<GuestRoom>>(this, OnGuestRoomsReceived);
-            //LoadData();
+            Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
             LoadCommands();
+            
+        }
+
+        private void OnUpdateListMessageReceived(UpdateListMessage obj)
+        {
+            LoadData();
+            dialogService.CloseRateDialog();
         }
 
         private void OnGuestRoomsReceived(ObservableCollection<GuestRoom> guestRooms)
@@ -68,10 +76,10 @@ namespace GuestRoomWPF.ViewModel
             GuestRooms = guestRooms;
         }
 
-        /*private void LoadData()
+        private void LoadData()
         {
             GuestRooms = gRDataService.getAllGuestRooms().ToObservableCollection();
-        }*/
+        }
 
         private void LoadCommands()
         {
@@ -96,7 +104,6 @@ namespace GuestRoomWPF.ViewModel
         private void RateGuestRoom(object obj)
         {
             Messenger.Default.Send<GuestRoom>(selectedGuestRoom);
-            Messenger.Default.Send<IDialogService>(dialogService);
             dialogService.ShowRateDialog();
         }
 

@@ -106,6 +106,15 @@ namespace GuestRoomWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose a Guestroom to display in the list..
+        /// </summary>
+        public static string GRListViewChoose {
+            get {
+                return ResourceManager.GetString("GRListViewChoose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use the slider to set your rating:.
         /// </summary>
         public static string GRRateViewTextBlockRatingSlider {

@@ -132,6 +132,9 @@
   <data name="GRListViewButtonRating" xml:space="preserve">
     <value>Send Rating</value>
   </data>
+  <data name="GRListViewChoose" xml:space="preserve">
+    <value>Choose a Guestroom to display in the list.</value>
+  </data>
   <data name="GRRateViewTextBlockRatingSlider" xml:space="preserve">
     <value>Use the slider to set your rating:</value>
   </data>
