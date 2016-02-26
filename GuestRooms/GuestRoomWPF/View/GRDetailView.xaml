@@ -23,6 +23,11 @@
                 <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Address.CityName}" />
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Phone}" />
+            <!--<TextBlock HorizontalAlignment="Center" Margin="5">           
+                <Hyperlink NavigateUri="{Binding SelectedGuestRoom.Website}" RequestNavigate="Hyperlink_RequestNavigate">
+                   {Binding SelectedGuestRoom.Website}
+                </Hyperlink>    
+            </TextBlock>!-->
             <TextBlock HorizontalAlignment="Center" Margin="5" Text="{Binding SelectedGuestRoom.Website}" />
         </StackPanel>
     </Grid>
