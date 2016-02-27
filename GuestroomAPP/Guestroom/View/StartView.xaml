@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:p="clr-namespace:Guestroom.Properties"
+             x:Class="Guestroom.View.StartView">
+  <StackLayout Padding="20" VerticalOptions="Center">
+    <Label x:Name="GRStartViewTextBlockTitle" Text="{x:Static p:Resources.AppTitle}" HorizontalTextAlignment="Center" FontSize="22" FontAttributes="Bold" FontFamily="sans-serif-condensed"/>
+    <Label x:Name="GRStartViewTextBlockLoading" Text="{x:Static p:Resources.GRStartViewTextBlockLoading}" HorizontalTextAlignment="Center"/>
+    <Label x:Name="GRStartViewTextBlocktest" Text="{Binding SelectedGuestRoom.Name}" HorizontalTextAlignment="Center"/>
+    <ActivityIndicator Color="Red" IsRunning="true" />
+  </StackLayout>
+</ContentPage>

@@ -13,6 +13,7 @@ namespace GuestRoomWPF
         private static GRListViewModel gRListViewModel = new GRListViewModel(gRDataService);
         private static GRDetailViewModel gRDetailViewModel = new GRDetailViewModel();
         private static GRRateViewModel gRRateViewModel = new GRRateViewModel(gRDataService);
+        
 
         public static GRDetailViewModel GRDetailViewModel
         {
