@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GuestRoomWPF.Services
 {
@@ -11,6 +12,7 @@ namespace GuestRoomWPF.Services
     {
         void ShowStartDialog();
         void CloseStartDialog();
+        void HideStartDialog();
         void CloseDetailDialog();
         void ShowDetailDialog();
         void CloseRateDialog();

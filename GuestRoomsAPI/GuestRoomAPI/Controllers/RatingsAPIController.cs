@@ -13,44 +13,44 @@ using KamersInVlaanderenDomain.DataModel;
 
 namespace GuestRoomAPI.Controllers
 {
-    public class GuestRoomsAPIController : ApiController
+    public class RatingsAPIController : ApiController
     {
         private KamersContext db = new KamersContext();
 
-        // GET: api/GuestRoomsAPI
-        public IQueryable<GuestRoom> GetGuestRooms()
+        // GET: api/RatingsAPI
+        public IQueryable<Rating> GetRatings()
         {
-            return db.GuestRooms.Include(g => g.Address).Include(g => g.Location).Include(g => g.ImageURLs).Include(g => g.Ratings);
+            return db.Ratings;
         }
 
-        // GET: api/GuestRoomsAPI/5
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult GetGuestRoom(int id)
+        // GET: api/RatingsAPI/5
+        [ResponseType(typeof(Rating))]
+        public IHttpActionResult GetRating(int id)
         {
-            GuestRoom guestRoom = db.GuestRooms.Find(id);
-            if (guestRoom == null)
+            Rating rating = db.Ratings.Find(id);
+            if (rating == null)
             {
                 return NotFound();
             }
 
-            return Ok(guestRoom);
+            return Ok(rating);
         }
 
-        // PUT: api/GuestRoomsAPI/5
+        // PUT: api/RatingsAPI/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutGuestRoom(int id, GuestRoom guestRoom)
+        public IHttpActionResult PutRating(int id, Rating rating)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != guestRoom.Id)
+            if (id != rating.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(guestRoom).State = EntityState.Modified;
+            db.Entry(rating).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace GuestRoomAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GuestRoomExists(id))
+                if (!RatingExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace GuestRoomAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/GuestRoomsAPI
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult PostGuestRoom(GuestRoom guestRoom)
+        // POST: api/RatingsAPI
+        [ResponseType(typeof(Rating))]
+        public IHttpActionResult PostRating(Rating rating)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.GuestRooms.Add(guestRoom);
+            db.Ratings.Add(rating);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = guestRoom.Id }, guestRoom);
+            return CreatedAtRoute("DefaultApi", new { id = rating.Id }, rating);
         }
 
-        // DELETE: api/GuestRoomsAPI/5
-        [ResponseType(typeof(GuestRoom))]
-        public IHttpActionResult DeleteGuestRoom(int id)
+        // DELETE: api/RatingsAPI/5
+        [ResponseType(typeof(Rating))]
+        public IHttpActionResult DeleteRating(int id)
         {
-            GuestRoom guestRoom = db.GuestRooms.Find(id);
-            if (guestRoom == null)
+            Rating rating = db.Ratings.Find(id);
+            if (rating == null)
             {
                 return NotFound();
             }
 
-            db.GuestRooms.Remove(guestRoom);
+            db.Ratings.Remove(rating);
             db.SaveChanges();
 
-            return Ok(guestRoom);
+            return Ok(rating);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace GuestRoomAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool GuestRoomExists(int id)
+        private bool RatingExists(int id)
         {
-            return db.GuestRooms.Count(e => e.Id == id) > 0;
+            return db.Ratings.Count(e => e.Id == id) > 0;
         }
     }
 }

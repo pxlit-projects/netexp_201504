@@ -83,16 +83,26 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRListViewModel(IGRDataService gRDataService, IDialogService dialogService)
+        public GRListViewModel(IGRDataService gRDataService)
         {
             this.gRDataService = gRDataService;
-            this.dialogService = dialogService;
+            //this.dialogService = dialogService;
             selectedGuestRoom = new GuestRoom();
             selectedGuestRoom.ProductDescription = GuestRoomWPF.Properties.Resources.GRListViewChoose;
             Messenger.Default.Register<ObservableCollection<GuestRoom>>(this, OnGuestRoomsReceived);
             Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
+            Messenger.Default.Register<IDialogService>(this, OnDialogServiceReceived);
+
+            this.dialogService = new DialogService(); //TODO Remove when messaging works
+
+
             LoadCommands();
             
+        }
+
+        private void OnDialogServiceReceived(IDialogService obj)
+        {
+            this.dialogService = obj;
         }
 
         private void OnUpdateListMessageReceived(UpdateListMessage obj)

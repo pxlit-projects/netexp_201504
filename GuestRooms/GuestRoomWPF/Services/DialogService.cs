@@ -27,6 +27,12 @@ namespace GuestRoomWPF.Services
                 gRStartView.Close();
         }
 
+        public void HideStartDialog()
+        {
+            if (gRStartView != null)
+                gRStartView.Hide();
+        }
+
         public void ShowDetailDialog()
         {
             gRDetailView = new GRDetailView();

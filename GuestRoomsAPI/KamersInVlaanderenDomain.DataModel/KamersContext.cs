@@ -5,6 +5,7 @@ namespace KamersInVlaanderenDomain.DataModel
 {
     public class KamersContext:DbContext
     {
+
         public DbSet<GuestRoom> GuestRooms { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Location> Locations { get; set; }
@@ -13,6 +14,11 @@ namespace KamersInVlaanderenDomain.DataModel
         //public DbSet<Prices> Prices { get; set; }
         //public DbSet<User> Users { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+
+        public KamersContext(): base("DefaultConnection"){
+            
+        }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             //one-to-many 

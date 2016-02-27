@@ -35,9 +35,11 @@ namespace GuestRoomWPF.ViewModel
         private void ShowData()
         {
             Messenger.Default.Send<ObservableCollection<GuestRoom>>(guestRooms);
-            
+            Messenger.Default.Send<IDialogService>(dialogService);
             dialogService.ShowListDialog();
+            dialogService.HideStartDialog();
             OnRequestClose(); //close startup window
+            
         }
 
 
