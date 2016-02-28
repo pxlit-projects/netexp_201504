@@ -70,7 +70,7 @@ namespace GuestRoomWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coordinates (Lambert 72):.
+        ///   Looks up a localized string similar to Coordinates:.
         /// </summary>
         public static string Coordinates {
             get {

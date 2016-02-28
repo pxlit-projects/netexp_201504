@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Data;
+using Xamarin.Forms;
 
-namespace GuestRoomWPF.Converter
+namespace Guestroom.Converters
 {
     public class RatingConverter : IValueConverter
     {
@@ -30,7 +29,7 @@ namespace GuestRoomWPF.Converter
             }
             catch
             {
-                return DependencyProperty.UnsetValue;
+                return null;//return DependencyProperty.UnsetValue; TODO
             }
         }
 

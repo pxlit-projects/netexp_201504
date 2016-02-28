@@ -35,7 +35,7 @@ namespace Guestroom.Services
         {
             string apiRatings = Settings.APIBASEURL + "/api/RatingsAPI";
             var client = new HttpClient();
-            client.PostAsJsonAsync<Rating>(apiRatings, rating);
+            //client.PostAsJsonAsync(apiRatings, rating);
         }
     }
 }

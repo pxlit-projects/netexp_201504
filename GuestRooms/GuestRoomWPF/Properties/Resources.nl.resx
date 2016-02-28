@@ -121,7 +121,7 @@
     <value>Gastenkamers in Vlaanderen</value>
   </data>
   <data name="Coordinates" xml:space="preserve">
-    <value>Coordinaten (Lambert 72):</value>
+    <value>Coordinaten:</value>
   </data>
   <data name="DefaultUser" xml:space="preserve">
     <value>Anoniem</value>

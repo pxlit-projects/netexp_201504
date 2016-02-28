@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Guestroom.ViewModel;
 
 using Xamarin.Forms;
 
@@ -12,7 +8,15 @@ namespace Guestroom.View
     {
         public ListView()
         {
+            BindingContext = new ListViewModel();
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
+
+            //not working
+            while (Navigation.NavigationStack.Count > 0)
+                Navigation.RemovePage(Navigation.NavigationStack[0]);
+
         }
     }
 }

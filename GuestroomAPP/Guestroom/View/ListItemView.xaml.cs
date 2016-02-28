@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guestroom.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace Guestroom.View
     {
         public ListItemView()
         {
+            BindingContext = new ListItemViewModel();
             InitializeComponent();
+            this.Title = Guestroom.Properties.Resources.AppTitle;
         }
     }
 }

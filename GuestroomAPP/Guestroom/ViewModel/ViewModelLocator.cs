@@ -1,4 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using Guestroom.Services;
+using Guestroom.View;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -10,7 +13,7 @@ namespace Guestroom.ViewModel
 {
     public class ViewModelLocator
     {
-        static ViewModelLocator()
+        /*static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<StartViewModel>();
@@ -28,6 +31,29 @@ namespace Guestroom.ViewModel
             {
                 return ServiceLocator.Current.GetInstance<StartViewModel>();
             }
+        }*/
+
+        public ViewModelLocator()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            var navigationService = this.CreateNavigationService();
+            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
+
+            SimpleIoc.Default.Register<StartViewModel>();
+            //SimpleIoc.Default.Register<ListViewModel>();
+        }
+
+        private INavigationService CreateNavigationService()
+        {
+            var navigationService = new NavigationService();
+            navigationService.Configure("Start", typeof(StartView));
+            // navigationService.Configure("key1", typeof(OtherPage1));
+            // navigationService.Configure("key2", typeof(OtherPage2));
+
+            return navigationService;
         }
     }
 }

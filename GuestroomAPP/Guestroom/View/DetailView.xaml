@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:p="clr-namespace:Guestroom.Properties"
              x:Class="Guestroom.View.DetailView">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout Padding="20" Orientation="Vertical" VerticalOptions="Center">
+    <Label Text="{Binding SelectedGuestRoom.Name}" HorizontalOptions="Center" FontSize="18" TextColor="Aqua"/>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Label Text="{Binding SelectedGuestRoom.Address.Street}" HorizontalOptions="Center" />
+      <Label Text="{Binding SelectedGuestRoom.Address.HouseNumber}" HorizontalOptions="Center" />
+      <Label Text="{Binding SelectedGuestRoom.Address.BoxNumber}" HorizontalOptions="Center" />
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Label Text="{Binding SelectedGuestRoom.Address.PostalCode}" HorizontalOptions="Center" />
+      <Label Text="{Binding SelectedGuestRoom.Address.CityName}" HorizontalOptions="Center" />
+    </StackLayout>
+    <Label Text="{Binding SelectedGuestRoom.Phone}" HorizontalOptions="Center" />
+    <Label Text="{Binding SelectedGuestRoom.Website}" HorizontalOptions="Center" />
+  </StackLayout>
 </ContentPage>

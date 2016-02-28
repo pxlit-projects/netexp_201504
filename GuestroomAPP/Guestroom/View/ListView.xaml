@@ -1,6 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Guestroom.Converters"
+              xmlns:p="clr-namespace:Guestroom.Properties"
              x:Class="Guestroom.View.ListView">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:RatingConverter x:Key="ratingConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+<StackLayout Padding="30" Spacing="1">
+      <!--<Label Text="{Binding XCoordinate}" FontSize="18" TextColor="Silver" />
+      <Label Text="{Binding YCoordinate}" FontSize="18" TextColor="Silver" />
+      <Button TextColor="White" Text="{x:Static p:Resources.GRListViewButtonDistance}" Command="{Binding SortCommand}" />!-->
+      <Label Text="{x:Static p:Resources.AppTitle}" FontSize="18" TextColor="Silver" />
+      <ListView x:Name="GuestRoomList" ItemsSource="{Binding GuestRooms}" SelectedItem="{Binding SelectedGuestRoom}"><!-- ItemTapped="OnSelected">!-->
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout Padding="5" Spacing="1" >
+                  <Label Text="{Binding Name}" FontSize="18" TextColor="Aqua" />
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{x:Static p:Resources.Rating}" FontSize="10" />
+                    <Label Text="{Binding AverageRating, Converter={StaticResource ratingConverter}}}" FontSize="10" /> <!--, Converter={StaticResource local:RatingConverter}-->
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
 </ContentPage>

@@ -121,7 +121,7 @@
     <value>Guestrooms in Flanders</value>
   </data>
   <data name="Coordinates" xml:space="preserve">
-    <value>Coordinates (Lambert 72):</value>
+    <value>Coordinates:</value>
   </data>
   <data name="DefaultUser" xml:space="preserve">
     <value>Anonymous</value>

@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:p="clr-namespace:Guestroom.Properties"
              x:Class="Guestroom.View.RateView">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <Label Text="{Binding SelectedGuestRoom.Name}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout Padding="20" Orientation="Vertical" VerticalOptions="Center">
+    <Label Text="{Binding SelectedGuestRoom.Name}" HorizontalOptions="Center" FontSize="18" TextColor="Aqua"/>
+    <Label Text="{x:Static p:Resources.GRRateViewTextBlockUser}" HorizontalOptions="Center" />
+    <Entry Text="{Binding User}" HorizontalOptions="Center" />
+    <Label Text="{x:Static p:Resources.GRRateViewTextBlockRatingSlider}" HorizontalOptions="Center" />
+    <Slider Value="{Binding Rating}" Minimum="0" Maximum="5" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Label Text="{x:Static p:Resources.Rating}" HorizontalOptions="Center" />
+      <Label Text="{Binding Rating}" HorizontalOptions="Center" />
+    </StackLayout>
+    <Button TextColor="White" Text="{x:Static p:Resources.GRListViewButtonRating}" Command="{Binding RatingCommand}" />
+  </StackLayout>
 </ContentPage>

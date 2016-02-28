@@ -130,9 +130,7 @@ namespace GuestRoomWPF.ViewModel
 
         private bool CanSortGuestRooms(object obj)
         {
-            if (xCoordinate < 20000 || xCoordinate > 300000)
-                return false;
-            if (yCoordinate < 20000 || yCoordinate > 300000)
+            if (xCoordinate == 0 || yCoordinate == 0)
                 return false;
             return true;
         }
@@ -146,7 +144,7 @@ namespace GuestRoomWPF.ViewModel
             var notSorted = new List<GuestRoom>(guestRooms);
             foreach(GuestRoom guestroom in notSorted)
             {
-                guestroom.distanceFromCoordinates = Math.Sqrt(Math.Pow((xCoordinate - guestroom.Location.X), 2.0) + Math.Pow((yCoordinate - guestroom.Location.Y),2.0));
+                guestroom.distanceFromCoordinates = Math.Sqrt(Math.Pow((yCoordinate - guestroom.Location.getLatLon().Lon), 2.0) + Math.Pow((xCoordinate - guestroom.Location.getLatLon().Lat), 2.0));
             }
             notSorted.Sort((x, y) => x.distanceFromCoordinates.CompareTo(y.distanceFromCoordinates));
             GuestRooms = notSorted.ToObservableCollection<GuestRoom>();

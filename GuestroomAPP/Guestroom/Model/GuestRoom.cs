@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Lambert72Converter;
+using System.Collections.Generic;
 
 namespace Guestroom.Model
 {
@@ -105,7 +106,7 @@ namespace Guestroom.Model
         }
         public double distanceFromCoordinates { get; set; }
 
-
+        
 
     }
 }

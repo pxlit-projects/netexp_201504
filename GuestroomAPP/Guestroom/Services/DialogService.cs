@@ -1,12 +1,12 @@
-﻿/*using GuestRoomWPF.ViewModel;
+﻿using GalaSoft.MvvmLight.Views;
 using System;
-using System.Windows;
+using System.Threading.Tasks;
 
 namespace Guestroom.Services
 {
     public class DialogService : IDialogService
     {
-        Window gRStartView = null;
+        /*Window gRStartView = null;
         Window gRListView = null;
         Window gRDetailView = null;
         Window gRRateView = null;
@@ -66,6 +66,35 @@ namespace Guestroom.Services
         {
             if (gRListView != null)
                 gRListView.Close();
+        }*/
+        public Task ShowError(Exception error, string title, string buttonText, Action afterHideCallback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ShowError(string message, string title, string buttonText, Action afterHideCallback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ShowMessage(string message, string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ShowMessage(string message, string title, string buttonText, Action afterHideCallback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Action<bool> afterHideCallback)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ShowMessageBox(string message, string title)
+        {
+            throw new NotImplementedException();
         }
     }
-}*/
+}

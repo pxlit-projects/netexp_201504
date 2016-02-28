@@ -1,4 +1,6 @@
-﻿using Guestroom.Model;
+﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using Guestroom.Model;
 using Guestroom.Services;
 using Guestroom.View;
 using Guestroom.ViewModel;
@@ -29,11 +31,33 @@ namespace Guestroom
 					}
 				}
 			};*/
-            MainPage = new StartView();
+
+            var nav = new NavigationService();
+            nav.Configure("StartView", typeof(StartView));
+            nav.Configure("ListView", typeof(View.ListView));
+            nav.Configure("ListItemView", typeof(View.ListItemView));
+            nav.Configure("DetailView", typeof(View.DetailView));
+            nav.Configure("RateView", typeof(View.RateView));
+            //nav.Configure(Locator.SecondPage, typeof(SecondPage));
+            //nav.Configure(Locator.ThirdPage, typeof(ThirdPage));
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+
+            var startPage = new NavigationPage(new StartView());
+
+            nav.Initialize(startPage);
+
+            //SimpleIoc.Default.Register<INavigationService>(() => nav);
+
+            MainPage = startPage;
+
+
+
+            //MainPage = new StartView();
+            //MainPage = new NavigationPage(new StartView());
         }
 
 
-        private static ViewModelLocator locator;
+        /*private static ViewModelLocator locator;
 
         public static ViewModelLocator Locator
         {
@@ -41,7 +65,7 @@ namespace Guestroom
             {
                 return locator ?? (locator = new ViewModelLocator());
             }
-        }
+        }*/
 
 
         /*public static Page GetMainPage()

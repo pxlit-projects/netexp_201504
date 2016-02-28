@@ -57,6 +57,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="GuestRoom.cs" />
     <Compile Include="ImageURL.cs" />
+    <Compile Include="Lambert72Converter.cs" />
     <Compile Include="License.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Price.cs" />

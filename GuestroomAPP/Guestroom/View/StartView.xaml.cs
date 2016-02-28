@@ -8,8 +8,10 @@ namespace Guestroom.View
     {
         public StartView()
         {
+            BindingContext = new StartViewModel();
+            //BindingContext = App.Locator.Start;
             InitializeComponent();
-            BindingContext = App.Locator.Start;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

@@ -1,6 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:p="clr-namespace:Guestroom.Properties"
+             xmlns:local="clr-namespace:Guestroom.Converters"
              x:Class="Guestroom.View.ListItemView">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:ImageConverter x:Key="imageConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <StackLayout Padding="20" Orientation="Vertical">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Button TextColor="White" Text="{x:Static p:Resources.GRListViewButtonDetail}" Command="{Binding DetailCommand}" />
+      <Button TextColor="White" Text="{x:Static p:Resources.GRListViewButtonRate}" Command="{Binding RateCommand}" />
+    </StackLayout>
+    <ScrollView Orientation="Vertical">
+      <StackLayout Orientation="Vertical">
+        <Label Text="{Binding SelectedGuestRoom.Name}" HorizontalOptions="Center" FontSize="18" TextColor="Aqua"/>
+        <Label Text="{Binding SelectedGuestRoom.ProductDescription}" HorizontalOptions="Center" />
+        <Image Source="{Binding SelectedGuestRoom.ImageURLs, Converter={StaticResource imageConverter}}" />
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+  
+  
 </ContentPage>
