@@ -91,25 +91,18 @@ namespace GuestRoomWPF.ViewModel
             selectedGuestRoom.ProductDescription = GuestRoomWPF.Properties.Resources.GRListViewChoose;
             Messenger.Default.Register<ObservableCollection<GuestRoom>>(this, OnGuestRoomsReceived);
             Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
-            Messenger.Default.Register<IDialogService>(this, OnDialogServiceReceived);
-
             LoadCommands();
-        }
-
-        private void OnDialogServiceReceived(IDialogService obj)
-        {
-            this.dialogService = obj;
         }
 
         private void OnUpdateListMessageReceived(UpdateListMessage obj)
         {
             LoadData();
-            dialogService.CloseRateDialog();
         }
 
         private void OnGuestRoomsReceived(ObservableCollection<GuestRoom> guestRooms)
         {
             GuestRooms = guestRooms;
+            
         }
 
         private void LoadData()

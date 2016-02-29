@@ -14,7 +14,6 @@ namespace GuestRoomWPF.ViewModel
         public ICommand RatingCommand { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -64,16 +63,12 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRRateViewModel(IGRDataService gRDataService)
+        public GRRateViewModel(IGRDataService gRDataService, IDialogService dialogService)
         {
             this.gRDataService = gRDataService;
+            this.dialogService = dialogService;
             Messenger.Default.Register<GuestRoom>(this, OnGuestRoomReceived);
             LoadCommands();
-        }
-
-        private void OnDialogServiceReceived(IDialogService dialogService)
-        {
-            this.dialogService = dialogService;
         }
 
         private void LoadCommands()
@@ -90,6 +85,7 @@ namespace GuestRoomWPF.ViewModel
             selectedGuestRoom.Ratings.Add(r);
             gRDataService.saveRating(r);
             Messenger.Default.Send<UpdateListMessage>(new UpdateListMessage());
+            dialogService.CloseRateDialog();
         }
 
         private bool CanRatingGuestRoom(object obj)

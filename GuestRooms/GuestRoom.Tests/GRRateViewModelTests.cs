@@ -11,10 +11,11 @@ namespace KamersInVlaanderen.Tests
     public class GRRateViewModelTests
     {
         private IGRDataService gRDataService;
+        private IDialogService dialogService;
 
         private GRRateViewModel GetViewModel()
         {
-            return new GRRateViewModel(this.gRDataService);
+            return new GRRateViewModel(gRDataService, dialogService);
         }
 
         [TestInitialize]
