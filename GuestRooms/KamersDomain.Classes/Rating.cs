@@ -1,4 +1,4 @@
-﻿namespace KamersInVlaanderen
+﻿namespace KamersInVlaanderen.Model
 {
     public class Rating
     {

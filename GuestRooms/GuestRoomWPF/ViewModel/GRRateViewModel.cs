@@ -1,6 +1,6 @@
 ﻿using GuestRoomWPF.Services;
 using GuestRoomWPF.Utility;
-using KamersInVlaanderen;
+using KamersInVlaanderen.Model;
 using System.ComponentModel;
 using System.Windows.Input;
 using GuestRoomWPF.Messages;

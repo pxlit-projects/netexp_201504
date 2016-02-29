@@ -1,6 +1,6 @@
 ﻿using Lambert72Converter;
 
-namespace KamersInVlaanderen
+namespace KamersInVlaanderen.Model
 {
     public class Location
     {

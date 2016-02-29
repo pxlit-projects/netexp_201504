@@ -13,7 +13,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602290312350_Initial"; }
+            get { return "201602290527116_Initial"; }
         }
         
         string IMigrationMetadata.Source

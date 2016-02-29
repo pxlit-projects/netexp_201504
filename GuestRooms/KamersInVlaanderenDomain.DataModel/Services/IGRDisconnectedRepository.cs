@@ -1,4 +1,4 @@
-﻿using KamersInVlaanderen;
+﻿using KamersInVlaanderen.Model;
 using System.Collections.Generic;
 
 namespace KamersInVlaanderenDomain.DataModel.Services

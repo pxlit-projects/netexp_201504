@@ -1,7 +1,7 @@
 ﻿using GuestRoomWPF.Extensions;
 using GuestRoomWPF.Services;
 using GuestRoomWPF.Utility;
-using KamersInVlaanderen;
+using KamersInVlaanderen.Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -14,7 +14,17 @@ namespace GuestRoomWPF.ViewModel
         private IDialogService dialogService;
 
         private ObservableCollection<GuestRoom> guestRooms;
-
+        public ObservableCollection<GuestRoom> GuestRooms
+        { 
+            get
+            {
+                return guestRooms;
+            }
+            set
+            {
+                guestRooms = value;
+            }
+        }
         public GRStartViewModel(IGRDataService gRDataService, IDialogService dialogService)
         {
             this.gRDataService = gRDataService;
@@ -27,7 +37,7 @@ namespace GuestRoomWPF.ViewModel
         {
             await Task.Run(() =>
             {
-                guestRooms = gRDataService.getAllGuestRooms().ToObservableCollection();
+                GuestRooms = gRDataService.getAllGuestRooms().ToObservableCollection();
             });
             ShowData();
         }
@@ -39,9 +49,7 @@ namespace GuestRoomWPF.ViewModel
             dialogService.ShowListDialog();
             dialogService.HideStartDialog();
             OnRequestClose(); //close startup window
-            
         }
-
 
         //added to close startup window
         public event EventHandler RequestClose;

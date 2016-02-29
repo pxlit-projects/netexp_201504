@@ -1,4 +1,4 @@
-﻿using KamersInVlaanderen;
+﻿using KamersInVlaanderen.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using GuestRoomWPF.Services;
@@ -83,21 +83,17 @@ namespace GuestRoomWPF.ViewModel
             }
         }
 
-        public GRListViewModel(IGRDataService gRDataService)
+        public GRListViewModel(IGRDataService gRDataService, IDialogService dialogService)
         {
             this.gRDataService = gRDataService;
-            //this.dialogService = dialogService;
+            this.dialogService = dialogService;
             selectedGuestRoom = new GuestRoom();
             selectedGuestRoom.ProductDescription = GuestRoomWPF.Properties.Resources.GRListViewChoose;
             Messenger.Default.Register<ObservableCollection<GuestRoom>>(this, OnGuestRoomsReceived);
             Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
             Messenger.Default.Register<IDialogService>(this, OnDialogServiceReceived);
 
-            this.dialogService = new DialogService(); //TODO Remove when messaging works
-
-
             LoadCommands();
-            
         }
 
         private void OnDialogServiceReceived(IDialogService obj)
@@ -137,10 +133,6 @@ namespace GuestRoomWPF.ViewModel
 
         private void SortGuestRooms(object obj)
         {
-            //double xBilzen = 230000.0;
-            //double yBilzen = 170000.0;
-
-
             var notSorted = new List<GuestRoom>(guestRooms);
             foreach(GuestRoom guestroom in notSorted)
             {

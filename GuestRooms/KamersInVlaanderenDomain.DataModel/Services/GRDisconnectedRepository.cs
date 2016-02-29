@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using KamersInVlaanderen;
+using KamersInVlaanderen.Model;
 using System.Net.Http;
 using Newtonsoft.Json;
 

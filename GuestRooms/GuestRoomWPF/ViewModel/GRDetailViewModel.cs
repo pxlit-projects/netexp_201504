@@ -1,5 +1,5 @@
 ﻿using GuestRoomWPF.Utility;
-using KamersInVlaanderen;
+using KamersInVlaanderen.Model;
 using System.ComponentModel;
 
 namespace GuestRoomWPF.ViewModel

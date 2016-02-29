@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KamersInVlaanderen
+namespace KamersInVlaanderen.Model
 {
     public class GuestRoom 
     {

@@ -1,12 +1,11 @@
 namespace KamersInVlaanderenDomain.DataModel.Migrations
 {
     using KamersInVlaanderen;
+    using KamersInVlaanderen.Model;
     using Services;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Diagnostics;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<KamersInVlaanderenDomain.DataModel.KamersContext>
