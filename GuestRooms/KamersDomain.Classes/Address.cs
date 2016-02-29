@@ -9,5 +9,7 @@
         public string PostalCode { get; set; }
         public string CityName { get; set; }
         public string MainCityName { get; set; }
+        public GuestRoom GuestRoom { get; set; }
+        public int GuestRoomId { get; set; }
     }
 }

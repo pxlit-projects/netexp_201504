@@ -11,15 +11,18 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 "dbo.Addresses",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         Street = c.String(),
                         HouseNumber = c.String(),
                         BoxNumber = c.String(),
                         PostalCode = c.String(),
                         CityName = c.String(),
                         MainCityName = c.String(),
+                        GuestRoomId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GuestRooms", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.GuestRooms",
@@ -29,19 +32,13 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                         BusinessProductGroupId = c.Int(nullable: false),
                         BusinessProductId = c.Int(nullable: false),
                         Name = c.String(),
-                        AddressId = c.Int(nullable: false),
-                        LocationId = c.Int(nullable: false),
                         Phone = c.String(),
                         Mobile = c.String(),
                         Email = c.String(),
                         Website = c.String(),
                         ProductDescription = c.String(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Addresses", t => t.AddressId, cascadeDelete: true)
-                .ForeignKey("dbo.Locations", t => t.LocationId, cascadeDelete: true)
-                .Index(t => t.AddressId)
-                .Index(t => t.LocationId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.ImageURLs",
@@ -59,37 +56,40 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 "dbo.Locations",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         X = c.Double(nullable: false),
                         Y = c.Double(nullable: false),
+                        GuestRoomId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GuestRooms", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.Ratings",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        GuestroomId = c.Int(nullable: false),
+                        GuestRoomId = c.Int(nullable: false),
                         User = c.String(),
                         Value = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.GuestRooms", t => t.GuestroomId, cascadeDelete: true)
-                .Index(t => t.GuestroomId);
+                .ForeignKey("dbo.GuestRooms", t => t.GuestRoomId, cascadeDelete: true)
+                .Index(t => t.GuestRoomId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Ratings", "GuestroomId", "dbo.GuestRooms");
-            DropForeignKey("dbo.GuestRooms", "LocationId", "dbo.Locations");
+            DropForeignKey("dbo.Ratings", "GuestRoomId", "dbo.GuestRooms");
+            DropForeignKey("dbo.Locations", "Id", "dbo.GuestRooms");
             DropForeignKey("dbo.ImageURLs", "GuestRoomId", "dbo.GuestRooms");
-            DropForeignKey("dbo.GuestRooms", "AddressId", "dbo.Addresses");
-            DropIndex("dbo.Ratings", new[] { "GuestroomId" });
+            DropForeignKey("dbo.Addresses", "Id", "dbo.GuestRooms");
+            DropIndex("dbo.Ratings", new[] { "GuestRoomId" });
+            DropIndex("dbo.Locations", new[] { "Id" });
             DropIndex("dbo.ImageURLs", new[] { "GuestRoomId" });
-            DropIndex("dbo.GuestRooms", new[] { "LocationId" });
-            DropIndex("dbo.GuestRooms", new[] { "AddressId" });
+            DropIndex("dbo.Addresses", new[] { "Id" });
             DropTable("dbo.Ratings");
             DropTable("dbo.Locations");
             DropTable("dbo.ImageURLs");

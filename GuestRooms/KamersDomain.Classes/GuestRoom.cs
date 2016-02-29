@@ -20,10 +20,10 @@ namespace KamersInVlaanderen
         public string Name { get; set; }
         
         public Address Address { get; set; }
-        public int AddressId { get; set; }
+        //public int AddressId { get; set; }
         
         public Location Location { get; set; }
-        public int LocationId { get; set; }
+        //public int LocationId { get; set; }
         
         //public double distance { get; set; }
         //public string promotionalRegion { get; set; }

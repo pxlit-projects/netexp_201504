@@ -57,9 +57,9 @@
   <ItemGroup>
     <Compile Include="GuestRoomJSON.cs" />
     <Compile Include="KamersContext.cs" />
-    <Compile Include="Migrations\201602252247002_Initial.cs" />
-    <Compile Include="Migrations\201602252247002_Initial.Designer.cs">
-      <DependentUpon>201602252247002_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201602290312350_Initial.cs" />
+    <Compile Include="Migrations\201602290312350_Initial.Designer.cs">
+      <DependentUpon>201602290312350_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,19 +70,20 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602252247002_Initial.resx">
-      <DependentUpon>201602252247002_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KamersDomain.Classes\KamersDomain.Classes.csproj">
       <Project>{98bf88bc-b418-444f-aca5-589c820ca36f}</Project>
       <Name>KamersDomain.Classes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602290312350_Initial.resx">
+      <DependentUpon>201602290312350_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

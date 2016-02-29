@@ -13,7 +13,8 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(KamersInVlaanderenDomain.DataModel.KamersContext context)
@@ -50,7 +51,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 address.CityName = guestRoomJSON.CityName;
                 address.MainCityName = guestRoomJSON.MainCityName;
 
-                guestRoom.Address = address;
+                //guestRoom.Address = address;
 
                 Location location = new Location();
                 if (guestRoomJSON.X != "" || guestRoomJSON.Y != "")
@@ -70,7 +71,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                     location.X = 0.0;
                     location.Y = 0.0;
                 }
-                guestRoom.Location = location;
+                //guestRoom.Location = location;
 
                 guestRoom.ProductDescription = guestRoomJSON.ProductDescription;
 
@@ -87,16 +88,29 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                         imageUrls.Add(imageURL);
                     }
                 }
-                //guestRoom.ImageURLs = imageUrls;
-
 
                 context.GuestRooms.AddOrUpdate(
                          g => g.Id, guestRoom);
 
-                imageUrls.ForEach(i => context.ImageURLs.Add(i));
+                address.GuestRoom = guestRoom;
+                context.Addresses.AddOrUpdate(address);
+                context.SaveChanges();
+                guestRoom.Address = address;
+                context.SaveChanges();
+
+                location.GuestRoom = guestRoom;
+                context.Locations.AddOrUpdate(location);
+                context.SaveChanges();
+                guestRoom.Location = location;
+                context.SaveChanges();
+
+                imageUrls.ForEach(i => i.GuestRoom = guestRoom);
+                imageUrls.ForEach(i => context.ImageURLs.AddOrUpdate(i));
                 context.SaveChanges();
                 imageUrls.ForEach(i => guestRoom.ImageURLs.Add(i));
                 context.SaveChanges();
+
+
 
             }
         }

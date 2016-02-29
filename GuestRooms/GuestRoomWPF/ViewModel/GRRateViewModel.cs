@@ -85,7 +85,7 @@ namespace GuestRoomWPF.ViewModel
         {
             Rating r = new Rating();
             r.User = user;
-            r.GuestroomId = selectedGuestRoom.Id;
+            r.GuestRoomId = selectedGuestRoom.Id;
             r.Value = rating;
             selectedGuestRoom.Ratings.Add(r);
             gRDataService.saveRating(r);

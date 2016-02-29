@@ -7,6 +7,8 @@ namespace KamersInVlaanderen
         public int Id { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
+        public GuestRoom GuestRoom { get; set; }
+        public int GuestRoomId { get; set; }
 
         public LatLon getLatLon()
         {
