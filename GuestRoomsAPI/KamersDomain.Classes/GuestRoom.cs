@@ -38,7 +38,7 @@ namespace KamersInVlaanderen
         public string Email { get; set; }
         public string Website { get; set; }
 
-        
+
         //NO DATA public string Facebook { get; set; }
         //NO DATA public string Twitter { get; set; }
         //NO DATA public string Flickr { get; set; }

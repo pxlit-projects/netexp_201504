@@ -3,18 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:p="clr-namespace:Guestroom.Properties"
              x:Class="Guestroom.View.DetailView">
-  <StackLayout Padding="20" Orientation="Vertical" VerticalOptions="Center">
-    <Label Text="{Binding SelectedGuestRoom.Name}" HorizontalOptions="Center" FontSize="18" TextColor="Aqua"/>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-      <Label Text="{Binding SelectedGuestRoom.Address.Street}" HorizontalOptions="Center" />
-      <Label Text="{Binding SelectedGuestRoom.Address.HouseNumber}" HorizontalOptions="Center" />
-      <Label Text="{Binding SelectedGuestRoom.Address.BoxNumber}" HorizontalOptions="Center" />
+  <Grid RowSpacing="0" ColumnSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <StackLayout Grid.Row="1" Grid.Column="0" Padding="20" Orientation="Vertical">
+      <Label Text="{Binding SelectedGuestRoom.Name}" HorizontalOptions="Center" FontSize="18" TextColor="Aqua"/>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Label Text="{Binding SelectedGuestRoom.Address.Street}" HorizontalOptions="Center" />
+        <Label Text="{Binding SelectedGuestRoom.Address.HouseNumber}" HorizontalOptions="Center" />
+        <Label Text="{Binding SelectedGuestRoom.Address.BoxNumber}" HorizontalOptions="Center" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Label Text="{Binding SelectedGuestRoom.Address.PostalCode}" HorizontalOptions="Center" />
+        <Label Text="{Binding SelectedGuestRoom.Address.CityName}" HorizontalOptions="Center" />
+      </StackLayout>
+      <Label Text="{Binding SelectedGuestRoom.Phone}" HorizontalOptions="Center" />
+      <Label Text="{Binding SelectedGuestRoom.Website}" HorizontalOptions="Center" />
     </StackLayout>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-      <Label Text="{Binding SelectedGuestRoom.Address.PostalCode}" HorizontalOptions="Center" />
-      <Label Text="{Binding SelectedGuestRoom.Address.CityName}" HorizontalOptions="Center" />
-    </StackLayout>
-    <Label Text="{Binding SelectedGuestRoom.Phone}" HorizontalOptions="Center" />
-    <Label Text="{Binding SelectedGuestRoom.Website}" HorizontalOptions="Center" />
-  </StackLayout>
+
+
+  </Grid>
 </ContentPage>

@@ -27,7 +27,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
             /*if (!System.Diagnostics.Debugger.IsAttached)
                 System.Diagnostics.Debugger.Launch();*/
 
-            /*GRJSONDataService dataService = new GRJSONDataService();
+            GRJSONDataService dataService = new GRJSONDataService();
 
             List<GuestRoomJSON> guestRooms = dataService.getAllGuestRooms();
             foreach (GuestRoomJSON guestRoomJSON in guestRooms)
@@ -98,7 +98,7 @@ namespace KamersInVlaanderenDomain.DataModel.Migrations
                 imageUrls.ForEach(i => guestRoom.ImageURLs.Add(i));
                 context.SaveChanges();
 
-            }*/
+            }
         }
     }
 }

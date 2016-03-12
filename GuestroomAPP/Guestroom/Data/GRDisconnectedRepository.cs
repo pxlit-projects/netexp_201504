@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Net.Http.Formatting;
+using System.Text;
 
 namespace Guestroom.Services
 {
@@ -35,7 +37,22 @@ namespace Guestroom.Services
         {
             string apiRatings = Settings.APIBASEURL + "/api/RatingsAPI";
             var client = new HttpClient();
-            //client.PostAsJsonAsync(apiRatings, rating);
+            try
+            {
+                //client.PostAsJsonAsync(apiRatings, rating);
+
+                string json = JsonConvert.SerializeObject(rating);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                //HttpResponseMessage response = null;
+                //response = await client.PostAsync(url, content);
+                client.PostAsync(apiRatings, content);
+
+            }
+            catch (Exception e)
+
+            {
+
+            }
         }
     }
 }
